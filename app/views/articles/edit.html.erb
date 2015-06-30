@@ -5,6 +5,8 @@
 
   <%= f.input :title, class: "form_control" %>
   <%= f.input :content, class: "form_control" %>
+  <%= f.label :picture %>
+  <%= f.file_field :picture %>
 
   <%= f.button :submit, class: "btn-primary", id:"input_validate" %>
 

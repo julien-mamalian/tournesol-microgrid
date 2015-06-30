@@ -1,11 +1,13 @@
 <h1>Articles#new</h1>
 <p>Find me in app/views/articles/new.html.erb</p>
 
-<%= simple_form_for @article do |f| %>
+<%= simple_form_for (@article, html: { multipart: true }) do |f| %>
 
   <%= f.input :title, class: "form_control" %>
   <%= f.hidden_field :user_id, :value => current_user.id%>
   <%= f.input :content, class: "form_control" %>
+  <%= f.label :picture %>
+  <%= f.file_field :picture %>
 
   <%= f.button :submit, class: "btn-primary", id:"input_validate" %>
 
