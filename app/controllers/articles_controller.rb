@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action  :find_article, only: [:show, :create, :edit, :destroy, :update]
+  before_action  :find_article, only: [:show, :edit, :destroy, :update]
   def index
     @articles = Article.all
   end
@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :content, :votes)
+    params.require(:article).permit(:picture, :title, :content, :votes, :user_id)
   end
 
   def find_article
