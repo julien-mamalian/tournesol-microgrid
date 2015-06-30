@@ -15,6 +15,12 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  first_name             :string
+#  last_name              :string
+#  entreprise             :string
+#  expertise              :boolean
+#  function               :string
+#  city                   :string
 #
 # Indexes
 #
