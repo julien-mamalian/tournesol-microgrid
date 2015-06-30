@@ -1,11 +1,31 @@
 <%= content_for(:title) do %>
-  <%= current_user.email %>
+  <%= current_user.first_name %>
 <% end %>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <h1>Your profile</h1>
+      <div>
+        <strong><%= current_user.first_name %> <%=current_user.last_name%> </strong>
+        <ul>
+          <li>
+           <strong>Company: </strong><%=current_user.entreprise%>
+          </li>
+          <li>
+           <strong>Function:</strong> <%=current_user.function%>
+          </li>
+          <li>
+           <strong>City:</strong> <%=current_user.city%>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+
+
 
 
       <h2>Your personal information</h2>
