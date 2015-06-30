@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+  var nav_height = $('#bs-example-navbar-collapse-1').height();
   if(window.matchMedia("screen and (min-width: 840px) and (max-width: 1600px)").matches) {
     console.log($(window).width())
     var width_all = $(document).width();
@@ -20,7 +21,9 @@ $(document).ready(function(){
     $('.article_show_picture ').css({
       'width': $('.content_article').width()
     });
-
+    $('.profile_info_writter').css({
+      'margin-top': nav_height + 30
+    })
 
   } else if (window.matchMedia("screen and (min-width: 1600px)").matches) {
     console.log($(window).width())
@@ -43,6 +46,9 @@ $(document).ready(function(){
       'width': $('.content_article').width()
     });
 
+    $('.profile_info_writter').css({
+      'margin-top': nav_height + 30
+    })
 
   } else {
 

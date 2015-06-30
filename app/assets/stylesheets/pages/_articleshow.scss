@@ -2,6 +2,10 @@
   body {
   background-color: white;
   }
+  #back_link {
+    top: 0;
+    left: 0;
+  }
   #article_show {
 
     #title {
@@ -17,6 +21,16 @@
       float: right;
       position: fixed;
       z-index: -1;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+      .profile_info_writter {
+        margin-top: 40px;
+
+
+        .writter_picture {
+
+        }
+      }
     }
     .content_article {
       margin-top: 30px;
@@ -45,6 +59,16 @@
       float: right;
       position: fixed;
       z-index: -1;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+      .profile_info_writter {
+        margin-top: 40px;
+
+
+        .writter_picture {
+
+        }
+      }
     }
     .content_article {
       margin-top: 30px;
@@ -71,6 +95,15 @@
       float: right;
       position: fixed;
       z-index: -1;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+      .profile_info_writter {
+        margin-top: 40px;
+
+        .writter_picture {
+
+        }
+}
     }
     .content_article {
       margin-top: 30px;

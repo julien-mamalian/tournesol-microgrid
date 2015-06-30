@@ -1,6 +1,6 @@
-
-
+<%= link_to "Retour", :back, id:"back_link" %>
 <div id="article_show">
+
   <div class="article-show-content">
     <div class="text-center">
       <h2 id='title'><%= @article.title%></h2>
@@ -16,7 +16,9 @@
     </div>
   </div>
   <div class="article_show_writter">
-    esfez
+    <div class="profile_info_writter">
+      <%= image_tag @article.user.picture.url(:thumb), class:"writter_picture img-circle" %>
+    </div>
   </div>
 
 </div>
