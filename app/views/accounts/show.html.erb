@@ -1,0 +1,42 @@
+<%= content_for(:title) do %>
+  <%= current_user.first_name %>
+<% end %>
+
+<div class="container card-white ">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= image_tag @current_user.picture.url(:thumb), class: "img-circle" %>
+    </div>
+    <div class="col-xs-12">
+      <h3><%= current_user.first_name %> <%=current_user.last_name%></h3>
+      <div>
+        <ul>
+          <li>
+           <strong>Company: </strong><%=current_user.entreprise%>
+          </li>
+          <li>
+           <strong>Function:</strong> <%=current_user.function%>
+          </li>
+          <li>
+           <strong>City:</strong> <%=current_user.city%>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container card-white ">
+  <div class="row">
+    <div class="col-xs-9">
+      <h3>Your personal information</h3>
+      <div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
