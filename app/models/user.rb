@@ -21,6 +21,10 @@
 #  expertise              :boolean
 #  function               :string
 #  city                   :string
+#  picture_file_name      :string
+#  picture_content_type   :string
+#  picture_file_size      :integer
+#  picture_updated_at     :datetime
 #
 # Indexes
 #
@@ -35,4 +39,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles
+
+  has_attached_file :picture,
+    styles: { medium: "300x300>", thumb: "100x100>" }
+
+  validates_attachment_content_type :picture,
+    content_type: /\Aimage\/.*\z/
 end
