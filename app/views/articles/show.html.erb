@@ -1,6 +1,22 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
 
-<%= @article.title %>
-<%= @article.content %>
-<%= @article.votes %>
+
+<div id="article_show">
+  <div class="article-show-content">
+    <div class="text-center">
+      <h2 id='title'><%= @article.title%></h2>
+    </div>
+    <% if @article.picture %>
+      <%= image_tag @article.picture, class:'article_show_picture' %>
+    <%end %>
+    <div class="content_article">
+
+      <%= @article.title %>
+      <%= @article.content %>
+      <%= @article.votes %>
+    </div>
+  </div>
+  <div class="article_show_writter">
+    esfez
+  </div>
+
+</div>
