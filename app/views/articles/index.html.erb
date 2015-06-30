@@ -1,14 +1,29 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
-<ul>
-  <% @articles.each do |article|%>
-  <%= article.title%>
-  <%= article.content.split(" ").first(25).join(" ") + "..." %>
+<div class="text-center">
+  <h2 >Liste des articles</h2>
+  <br>
+</div>
+<div class="vertical-spacer"></div>
 
-  <% if article.picture %>
-    <%= image_tag article.picture %>
-  <%end %>
+<div class="container">
+  <% @articles.each do |article| %>
+    <div class="row">
+      <div class="col-xs-8">
+        <strong><%= article.title %></strong> - <%= article.votes %> votes
+        <br><br>
+        <%= article.content.split(" ").first(35).join(" ") + "..." %>
+        <br><br>
+        <div class="text-right link_show_article">
+          <%= link_to "Lire l'article", article_path(article) %>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="articles_index_container_picture">
+          <% if article.picture %>
+            <%= image_tag article.picture, class:'articles_index_picture' %>
+          <%end %>
+        </div>
+      </div>
+    </div>
+    <div class="vertical-spacer"></div>
   <% end %>
-</ul>
-
-
+</div>
