@@ -1,20 +1,21 @@
 <div class="text-center">
-  <h2 >Liste des articles</h2>
+  <h2 class='tk-europa' >Liste des articles</h2>
   <br>
 </div>
 <div class="vertical-spacer"></div>
 
 <div class="container">
   <% @articles.each do |article| %>
-    <div class="row">
+    <div class="row tk-europa" id='article'>
       <div class="col-xs-8">
-        <strong><%= article.title %></strong> - <%= article.votes %> votes
-        <br><br>
-        <%= article.content.split(" ").first(35).join(" ") + "..." %>
-        <br><br>
-        <div class="text-right link_show_article">
-          <%= link_to "Lire l'article", article_path(article) %>
-          <%= link_to "DELETE", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>
+        <div class="article_content">
+          <strong><%= article.title %></strong> - <%= article.votes %> votes
+          <br><br>
+          <%= article.content.split(" ").first(35).join(" ") + "..." %>
+          <br><br>
+          <div class="text-right link_show_article">
+            <%= link_to "Lire l'article", article_path(article), id:'back_link_2' %>
+          </div>
         </div>
       </div>
       <div class="col-xs-4">
@@ -25,6 +26,10 @@
         </div>
       </div>
     </div>
-    <div class="vertical-spacer"></div>
+    <div class="row">
+      <div class="col-xs-8">
+        <hr>
+      </div>
+    </div>
   <% end %>
 </div>

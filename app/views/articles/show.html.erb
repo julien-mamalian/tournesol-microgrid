@@ -1,4 +1,4 @@
-<%= link_to "Retour", :back, id:"back_link" %>
+<%= link_to "Retour", :back, id:"back_link_2", class:"tk-europa" %>
 <div id="article_show">
 
   <div class="article-show-content">
@@ -9,7 +9,7 @@
       <%= image_tag @article.picture, class:'article_show_picture' %>
     <%end %>
     <div class="content_article tk-europa">
-      <p class="tk-europa"><%= @article.content %></p>
+      <p class="tk-europa"><%= markdown_to_html(@article.content) %></p>
       <%= @article.votes %>
     </div>
   </div>

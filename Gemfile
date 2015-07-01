@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 ruby "2.2.2"
-
+gem "redcarpet"
 gem "rails", "4.2.3"
 gem "pg"
 gem "figaro"
@@ -18,6 +18,7 @@ gem "sass-rails", "~> 5.0"
 gem "uglifier"
 gem "bootstrap-sass"
 gem "font-awesome-sass"
+gem 'rails-bootstrap-markdown'
 
 gem "rails-i18n"
 gem "devise-i18n"
