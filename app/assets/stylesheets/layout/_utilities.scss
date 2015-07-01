@@ -38,6 +38,9 @@
   width: 500px;
 }
 
-.lining {
-  display: inline-block;
+.img-uniform-size {
+    height: 90px;
+    resize: horizontal;
+    overflow: auto;
 }
+

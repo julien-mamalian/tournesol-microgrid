@@ -1,14 +1,15 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<div class="text-center">
+  <h1>Editing article</h1>
+    <%= simple_form_for@article do |f| %>
 
-<%= simple_form_for @article do |f| %>
+      <%= f.input :title, class: "form_control" %>
+      <%= f.input :content, class: "form_control" %>
+      <%= f.label :picture %>
+      <%= f.file_field :picture %>
 
-  <%= f.input :title, class: "form_control" %>
-  <%= f.input :content, class: "form_control" %>
-  <%= f.label :picture %>
-  <%= f.file_field :picture %>
+      <%= f.button :submit, class: "btn-primary", id:"input_validate" %>
 
-  <%= f.button :submit, class: "btn-primary", id:"input_validate" %>
+    <% end %>
+</div>
 
-<% end %>
 
