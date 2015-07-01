@@ -1,22 +1,65 @@
-
-
+<%= link_to "Retour", :back, id:"back_link" %>
 <div id="article_show">
+
   <div class="article-show-content">
     <div class="text-center">
-      <h2 id='title'><%= @article.title%></h2>
+      <h2 id='title' class="tk-europa"><%= @article.title%></h2>
     </div>
     <% if @article.picture %>
       <%= image_tag @article.picture, class:'article_show_picture' %>
     <%end %>
-    <div class="content_article">
-
-      <%= @article.title %>
-      <%= @article.content %>
+    <div class="content_article tk-europa">
+      <p class="tk-europa"><%= @article.content %></p>
       <%= @article.votes %>
     </div>
   </div>
   <div class="article_show_writter">
-    esfez
-  </div>
+    <div class="profile_info_writter">
+      <div class="text-center">
+        <%= image_tag @article.user.picture.url(:thumb), class:"writter_picture img-circle" %>
+      </div>
+      <div class="text-center tk-europa">
+        <%= @article.user.first_name %> <%= @article.user.last_name %>
+        <hr>
+      </div>
+      <div class="enterprise_writter text-left">
+        <div class="text-center">
+          <strong><p class="tk-europa"> Author's details </p></strong>
+        </div>
+        <p class="tk-europa">
+        <strong>Enterprise:</strong> <%= @article.user.entreprise %>
+        <br>
+        <strong>Position:</strong> <%= @article.user.function %>
+        <br>
+        <strong>City:</strong> <%= @article.user.city %>
+        <br> <br>
+        <%= link_to 'Consulter le profil', account_path(@article.user), class:'tk-europa', id:'button_profile' %>
+        <hr>
+      </div>
 
+      <div class="connected_articles text-center">
+        <% if @article.user.articles.count >= 3 %>
+          <strong><p class="tk-europa"> Same author </p></strong>
+          <br>
+          <% @article.user.articles.sample(2).each do |article| %>
+            <% if article.id != @article.id %>
+              <div class="content_connected tk-europa text-left">
+                <strong><%= article.title %></strong>
+                <br>
+                <%= link_to "Lire l'artiucle", article_path(article) %>
+              </div>
+              <div class="picture_connected tk-europa">
+                <% if article.picture %>
+                  <%= image_tag article.picture.url(:thumb), class:'articles_index_picture' %>
+                <%end %>
+              </div>
+              <div class="cleared"> &nbsp;
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+        <hr>
+      </div>
+    </div>
+  </div>
 </div>
