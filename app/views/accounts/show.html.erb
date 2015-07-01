@@ -1,42 +1,47 @@
 <%= content_for(:title) do %>
-  <%= current_user.first_name %>
+  <%= @user.first_name %>
 <% end %>
 
-<div class="container card-white ">
+
+<div class="container card-white text-center">
   <div class="row">
     <div class="col-xs-12">
-      <%= image_tag @current_user.picture.url(:thumb), class: "img-circle" %>
+      <%= image_tag @user.picture.url(:thumb), class: "img-circle" %>
     </div>
     <div class="col-xs-12">
-      <h3><%= current_user.first_name %> <%=current_user.last_name%></h3>
+      <h3><%= @user.first_name %> <%=@user.last_name%></h3>
       <div>
-        <ul>
+        <ul class="list-unstyled">
           <li>
-           <strong>Company: </strong><%=current_user.entreprise%>
+           <strong>Company: </strong><%=@user.entreprise%>
           </li>
           <li>
-           <strong>Function:</strong> <%=current_user.function%>
+           <strong>Function:</strong> <%=@user.function%>
           </li>
           <li>
-           <strong>City:</strong> <%=current_user.city%>
+           <strong>City:</strong> <%=@user.city%>
           </li>
         </ul>
+        <%= link_to "Edit profile", edit_account_path %>
       </div>
     </div>
   </div>
 </div>
 <br>
-<div class="container card-white ">
-  <div class="row">
-    <div class="col-xs-9">
-      <h3>Your personal information</h3>
-      <div>
+<h3 class="text-center">Your articles</h3>
 
+<div class="separating-line"></div>
+<% @user.articles.each do |article| %>
+  <div class="tab_details" >
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-xs-3">
+          <p><strong><%= article.title %></strong></p>
+            <%= image_tag article.picture.url(:thumb), id:"thumb_profile", class:"img-circle"  %>
+          </div>
+        </div>
       </div>
-    </div>
   </div>
-</div>
-
-
+<% end %>
 
 
