@@ -1,35 +1,44 @@
-<div class="text-center">
-  <h2 class='tk-europa' >Liste des articles</h2>
-  <br>
-</div>
-<div class="vertical-spacer"></div>
+ <div id="index_article">
+  <div class="text-center">
+    <h2 class='tk-europa' >Liste des articles</h2>
+    <br>
+  </div>
+  <div class="vertical-spacer"></div>
 
-<div class="container">
-  <% @articles.each do |article| %>
-    <div class="row tk-europa" id='article'>
-      <div class="col-xs-8">
-        <div class="article_content">
-          <strong><%= article.title %></strong> - <%= article.votes %> votes
-          <br><br>
-          <%= article.content.split(" ").first(35).join(" ") + "..." %>
-          <br><br>
-          <div class="text-right link_show_article">
-            <%= link_to "Lire l'article", article_path(article), id:'back_link_2' %>
+  <div class="container">
+    <% @articles.each do |article| %>
+      <div class="row tk-europa" id='article'>
+        <div class="hidden-xs col-md-4 hidden-lg">
+          <div class="articles_index_container_picture">
+            <% if article.picture %>
+              <%= image_tag article.picture, class:'articles_index_picture' %>
+            <%end %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-lg-8">
+          <div class="article_content" id="contenu_width_750">
+            <strong><%= article.title %></strong> - <%= article.votes %> votes
+            <br><br>
+            <%= article.content.split(" ").first(35).join(" ") + "..." %>
+            <br><br>
+            <div class="text-right link_show_article">
+              <%= link_to "Lire l'article", article_path(article), id:'back_link_2' %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 hidden-md col-lg-4">
+          <div class="articles_index_container_picture">
+            <% if article.picture %>
+              <%= image_tag article.picture, class:'articles_index_picture' %>
+            <%end %>
           </div>
         </div>
       </div>
-      <div class="col-xs-4">
-        <div class="articles_index_container_picture">
-          <% if article.picture %>
-            <%= image_tag article.picture, class:'articles_index_picture' %>
-          <%end %>
+      <div class="row">
+        <div class="col-xs-8">
+          <hr>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-8">
-        <hr>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
