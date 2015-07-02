@@ -1,0 +1,26 @@
+.card-white {
+  background: white;
+  border-radius: 2px;
+  border: 1px solid #E4DBDB;
+}
+
+.img-uniform-size {
+    height: 90px;
+    resize: horizontal;
+    overflow: auto;
+}
+
+
+
+#left-container{
+  float: left;
+  width: 30%;
+}
+
+#right-container{
+  float: right;
+  width: 60%
+  p {
+    clear: both;
+  }
+}
