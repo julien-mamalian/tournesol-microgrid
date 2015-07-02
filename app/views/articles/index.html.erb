@@ -7,20 +7,37 @@
 
   <div class="container">
     <% @articles.each do |article| %>
+<!--
+tk-freight-text-pro    descriptoion
+tk-jaf-bernino-sans   title -->
+
+
       <div class="row tk-europa" id='article'>
         <div class="col-xs-12 col-sm-4 col-md-4 col hidden-lg">
           <div class="articles_index_container_picture" id="top_picture">
-            <% if article.picture %>
+
               <%= image_tag article.picture.url(:medium), class:'articles_index_picture' %>
-            <%end %>
+
           </div>
         </div>
         <div class="col-xs-12 col-lg-8">
           <div class="article_content" id="contenu_width_750">
-            <strong><%= article.title %></strong> - <%= article.votes %> votes
-            <br><br>
-            <%= article.content.split(" ").first(35).join(" ") + "..." %>
-            <br><br>
+
+           <div class="author_details">
+             <%= image_tag article.user.picture, class:'img-circle author_picture'%>
+             <div class="number_of_votes">
+               <p>- <%= article.votes %> votes </p>
+             </div>
+           </div>
+
+            <div class="tk-jaf-bernino-sans">
+              <h4><%= article.title %></h4>
+
+            </div>
+            <div class="tk-freight-text-pro">
+              <p><%= article.content.split(" ").first(35).join(" ") + "..." %></p>
+              <br><br>
+            </div>
             <div class="text-right link_show_article">
               <%= link_to "Lire l'article", article_path(article), id:'back_link_2' %>
             </div>
@@ -39,6 +56,8 @@
           <hr>
         </div>
       </div>
+
+
     <% end %>
   </div>
 </div>

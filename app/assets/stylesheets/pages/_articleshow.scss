@@ -16,12 +16,7 @@ body {
 }
 #article_show {
 
-  h1 {
-    font-weight: bold;
-  }
-  p {
-    font-size: 30px;
-  }
+
 
   // Liens pour lire les articles ou de retour
   a {
@@ -34,7 +29,7 @@ body {
   // Bouton du profil, bordure blanche
   #button_profile {
     border: 1px solid black;
-    padding: 5px 5px;
+    padding: 8px 8px;
     color: black;
     font-size: 20px;
 
@@ -57,11 +52,7 @@ body {
     padding-left: 40px !important;
     padding-right: 40px !important;
 
-    .enterprise_writter {
-      p {
-        font-size: 22px;
-      }
-    }
+
     .profile_info_writter {
       margin-top: 40px;
     }
@@ -72,9 +63,7 @@ body {
 
   }
   .connected_articles {
-    p {
-      font-size: 22px;
-    }
+
     .content_connected {
       width: 70%;
       float: left;
@@ -97,6 +86,26 @@ body {
 
 @media screen and (max-width: 1000px) {
   #article_show {
+    h1 {
+      font-weight: bold;
+      font-size: 30px;
+    }
+    p {
+      font-size: 20px;
+    }
+    #button_profile {
+      font-size: 12px;
+    }
+    .enterprise_writter {
+      p {
+        font-size: 14px;
+      }
+    }
+    .connected_articles {
+      p {
+        font-size: 14px;
+      }
+    }
     .article_show_content {
       padding-left: 70px;
       padding-right: 70px;
@@ -112,6 +121,26 @@ body {
 
 @media screen and (min-width: 1000px) and (max-width: 1300px)  {
   #article_show {
+    h1 {
+      font-weight: bold;
+      font-size: 30px;
+    }
+    p {
+      font-size: 20px;
+    }
+    #button_profile {
+      font-size: 12px;
+    }
+    .enterprise_writter {
+      p {
+        font-size: 14px;
+      }
+    }
+    .connected_articles {
+      p {
+        font-size: 14px;
+      }
+    }
     .article_show_content {
 
       padding-left: 75px;
@@ -130,6 +159,26 @@ body {
 
 @media screen and (min-width: 1300px) and (max-width: 1600px)  {
   #article_show {
+    h1 {
+      font-weight: bold;
+      font-size: 40px;
+    }
+    p {
+      font-size: 25px;
+    }
+    #button_profile {
+      font-size: 16px;
+    }
+    .enterprise_writter {
+      p {
+        font-size: 18px;
+      }
+    }
+    .connected_articles {
+      p {
+        font-size: 18px;
+      }
+    }
     .article_show_content {
 
       padding-left: 100px;
@@ -147,6 +196,26 @@ body {
 }
 @media screen and (min-width: 1600px)  {
   #article_show {
+    h1 {
+      font-weight: bold;
+      font-size: 50px;
+    }
+    p {
+      font-size: 30px;
+    }
+    #button_profile {
+      font-size: 20px;
+    }
+    .enterprise_writter {
+      p {
+        font-size: 22px;
+      }
+    }
+    .connected_articles {
+      p {
+        font-size: 22px;
+      }
+    }
     .article_show_content {
 
       padding-left: 150px;
