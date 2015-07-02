@@ -1,16 +1,29 @@
 <%= link_to "Retour", :back, id:"back_link_2" %>
-<div class="text-center" id="article_new_page" >
-  <h3>Create article</h3>
+<!-- <div class="text-center" id="article_new_page" > -->
 
-  <%= simple_form_for(@article, html: { multipart: true }) do |f| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 text-center">
 
-    <%= f.input :title, class: "form_control" %>
-    <%= f.hidden_field :user_id, :value => current_user.id%>
-    <%= f.text_area :content, class: "form_control", data: {provide: "markdown"} %>
-    <%= f.label :picture, class: "form_control" %>
-    <%= f.file_field :picture, class: "form_control" %>
 
-    <%= f.button :submit, class: "btn-primary", id:"input_validate" %>
+        <h3>Create article</h3>
 
-  <% end %>
-</div>
+        <%= simple_form_for(@article, html: { multipart: true }) do |f| %>
+
+          <%= f.input :title, class: "form_control" %>
+          <%= f.hidden_field :user_id, :value => current_user.id%>
+          <%= f.text_area :content, class: "form_control", data: {provide: "markdown"} %>
+          <%= f.label :picture, class: "form_control" %>
+          <%= f.file_field :picture, class: "form_control" %>
+
+          <%= f.button :submit, class: "btn-primary", id:"input_validate" %>
+
+        <% end %>
+
+      </div>
+
+
+    </div>
+  </div>
+
+<!-- </div> -->

@@ -8,10 +8,10 @@
   <div class="container">
     <% @articles.each do |article| %>
       <div class="row tk-europa" id='article'>
-        <div class="hidden-xs col-md-4 hidden-lg">
-          <div class="articles_index_container_picture">
+        <div class="col-xs-12 col-sm-4 col-md-4 col hidden-lg">
+          <div class="articles_index_container_picture" id="top_picture">
             <% if article.picture %>
-              <%= image_tag article.picture, class:'articles_index_picture' %>
+              <%= image_tag article.picture.url(:medium), class:'articles_index_picture' %>
             <%end %>
           </div>
         </div>
@@ -26,10 +26,10 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-4 hidden-md col-lg-4">
+        <div class="hidden-xs hidden-md col-lg-4" id="bottom_picture">
           <div class="articles_index_container_picture">
             <% if article.picture %>
-              <%= image_tag article.picture, class:'articles_index_picture' %>
+              <%= image_tag article.picture.url(:medium), class:'articles_index_picture' %>
             <%end %>
           </div>
         </div>

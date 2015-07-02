@@ -1,33 +1,40 @@
-<%= link_to "Retour", :back, id:"back_link_2", class:"tk-europa" %>
-<div id="article_show">
+  <div id="retour_link">
+    <%= link_to "Retour", :back, id:"back_link_2", class:"tk-europa" %>
+  </div>
 
-  <div class="article-show-content">
-    <div class="text-center">
-      <h2 id='title' class="tk-europa"><%= @article.title%></h2>
+<div id="article_show">
+  <div class="article_show_content">
+    <div class="text-center article_show_content_picture">
+      <% if @article.picture %>
+        <%= image_tag @article.picture, class:'article_show_picture' %>
+      <%end %>
     </div>
-    <% if @article.picture %>
-      <%= image_tag @article.picture, class:'article_show_picture' %>
-    <%end %>
-    <div class="content_article tk-europa">
-      <p class="tk-europa"><%= markdown_to_html(@article.content) %></p>
+    <div class="text-center article_show_content_title tk-jaf-bernino-sans">
+      <h1 id='title'><%= @article.title%></h1>
+    </div>
+
+    <div class="article_show_content_text tk-freight-text-pro">
+      <p class="tk-freight-text-pro"><%= markdown_to_html(@article.content) %></p>
       <%= @article.votes %>
     </div>
   </div>
-  <div class="article_show_writter">
+
+
+  <div class="article_show_writter navbar-fixed ">
     <div class="profile_info_writter">
       <div class="text-center">
         <%= image_tag @article.user.picture.url(:thumb), class:"writter_picture img-circle" %>
       </div>
-      <div class="text-center tk-europa">
+      <div class="text-center tk-freight-text-pro">
         <%= @article.user.first_name %> <%= @article.user.last_name %>
         <hr>
       </div>
       <div class="enterprise_writter text-left">
         <div class="text-center">
-          <strong><p class="tk-europa"> Author's details </p></strong>
+          <strong><p class="tk-jaf-bernino-sans"> Author's details </p></strong>
         </div>
-        <p class="tk-europa">
-        <strong>Enterprise:</strong> <%= @article.user.entreprise %>
+        <p class="tk-freight-text-pro">
+        <strong>Company:</strong> <%= @article.user.entreprise %>
         <br>
         <strong>Position:</strong> <%= @article.user.function %>
         <br>
@@ -39,16 +46,16 @@
 
       <div class="connected_articles text-center">
         <% if @article.user.articles.count >= 3 %>
-          <strong><p class="tk-europa"> Same author </p></strong>
+          <strong><p class="tk-jaf-bernino-sans"> Same author </p></strong>
           <br>
           <% @article.user.articles.sample(2).each do |article| %>
             <% if article.id != @article.id %>
-              <div class="content_connected tk-europa text-left">
-                <strong><%= article.title %></strong>
+              <div class="content_connected tk-freight-text-pro text-left">
+                <strong><p><%= article.title %></p></strong>
                 <br>
                 <%= link_to "Lire l'artiucle", article_path(article) %>
               </div>
-              <div class="picture_connected tk-europa">
+              <div class="picture_connected tk-freight-text-pro">
                 <% if article.picture %>
                   <%= image_tag article.picture.url(:thumb), class:'articles_index_picture' %>
                 <%end %>
@@ -63,3 +70,4 @@
     </div>
   </div>
 </div>
+
