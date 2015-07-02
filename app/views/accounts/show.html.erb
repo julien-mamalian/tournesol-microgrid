@@ -3,48 +3,47 @@
 <% end %>
 
 
-<div class="container card-white text-center">
+<div class="container card-white" id="left-container">
   <div class="row">
     <div class="col-xs-12">
       <%= image_tag @user.picture.url(:thumb), class: "img-circle" %>
     </div>
-    <div class="col-xs-12">
-      <h3><%= @user.first_name %> <%=@user.last_name%></h3>
-      <div>
-        <ul class="list-unstyled">
-          <li>
-           <strong>Company: </strong><%=@user.entreprise%>
-          </li>
-          <li>
-           <strong>Function:</strong> <%=@user.function%>
-          </li>
-          <li>
-           <strong>City:</strong> <%=@user.city%>
-          </li>
-        </ul>
-        <%= link_to "Edit profile", edit_account_path %>
+    <div>
+      <ul class="list-unstyled">
+        <li>
+        <%= @user.first_name %> <%=@user.last_name%>
+        <li>
+        </li>
+         <%=@user.entreprise%>
+        </li>
+        <li>
+          <%=@user.function%>
+        </li>
+        <li>
+          <%=@user.city%>
+        </li>
+      </ul>
+      <%= link_to "Edit profile", edit_account_path %>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="tab_details" >
+    <div class="container" id="right-container">
+      <div class="row">
+        <h3 class="text-center">Your articles</h3>
+        <% @user.articles.each do |article| %>
+          <div class="col-xs-2  ">
+            <ul class= "list-unstyled">
+              <li><strong><%= link_to article.title, article_path(article)  %></strong></li>
+              <li><%= image_tag article.picture.url(:thumb), id:"thumb_profile", class:"img-circle img-uniform-size"  %></li>
+              <li><%= link_to "Update", edit_article_path(article)  %></li>
+            </ul>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-<hr>
-<h3 class="text-center">Your articles</h3>
-<hr>
-
-<div class="tab_details" >
-  <div class="container text-center">
-    <div class="row">
-      <% @user.articles.each do |article| %>
-        <div class="col-xs-3  ">
-          <ul class= "list-unstyled">
-            <li><strong><%= link_to article.title, article_path(article)  %></strong></li>
-            <li><%= image_tag article.picture.url(:thumb), id:"thumb_profile", class:"img-circle img-uniform-size"  %></li>
-            <li><%= link_to "Update", edit_article_path(article)  %></li>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
 
