@@ -15,14 +15,13 @@ class ArticlesController < ApplicationController
     @article = Article.new
 
     authorize @article
-
   end
 
   def create
-    authorize @article
     @article = current_user.articles.build(article_params)
     @article.save
 
+    authorize @article
     redirect_to root_path
   end
 

@@ -3,10 +3,11 @@ class ArticlePolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def index?
-      false
-    end
+  def index?
+    false
+  end
 
   def create?
     true
@@ -20,5 +21,4 @@ class ArticlePolicy < ApplicationPolicy
     record.user == user
   end
 
-  end
 end
