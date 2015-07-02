@@ -1,7 +1,11 @@
 class AccountsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:edit, :update]
+  skip_before_action :authenticate_user!, only: [:show]
+  skip_after_action :verify_authorized
+
 
   def show
+    @user = User.find(params[:id])
   end
 
   def edit

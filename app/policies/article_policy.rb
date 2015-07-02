@@ -8,17 +8,13 @@ class ArticlePolicy < ApplicationPolicy
       false
     end
 
-
-
   def create?
-    true if current_user.find(user_id).expertise != nil
+    true
   end
-
 
   def update?
     record.user == user
   end
-
 
   def destroy?
     record.user == user
