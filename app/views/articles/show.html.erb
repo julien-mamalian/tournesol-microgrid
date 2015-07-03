@@ -40,7 +40,7 @@
         <br>
         <strong>City:</strong> <%= @article.user.city %>
         <br> <br>
-        <%= link_to 'Consulter le profil', account_path(@article.user), class:'tk-europa', id:'button_profile' %>
+        <%= link_to 'Check profil', account_path(@article.user), class:'tk-europa', id:'button_profile' %>
         <hr>
       </div>
 
@@ -53,7 +53,7 @@
               <div class="content_connected tk-freight-text-pro text-left">
                 <strong><p><%= article.title %></p></strong>
                 <br>
-                <%= link_to "Lire l'article", article_path(article) %>
+                <%= link_to "Read more", article_path(article) %>
               </div>
               <div class="picture_connected tk-freight-text-pro">
                 <% if article.picture %>
