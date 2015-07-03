@@ -20,6 +20,7 @@ $navbar-horizontal-padding: 20px;
 $navbar-border-bottom-width: 1px;
 $navbar-border-bottom-color: $gray-lighter;
 
+
 /* -------------------------------------
  * Navbar button
  * ------------------------------------- */
@@ -52,6 +53,7 @@ $navbar-profile-border-width: 2px;
   border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
   min-height: 0;
   transition: background 0.4s ease;
+  margin-bottom: 0;
 
   .navbar-nav > li > a,
   .navbar-nav > .open > a,
