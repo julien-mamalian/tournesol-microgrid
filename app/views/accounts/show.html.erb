@@ -38,9 +38,15 @@
 
 
 <ul class="list-unstyle list-inline text-center margin-top-50px padding-bottom-50px">
-  <li> <%= link_to "Your articles", :anchor => "articles" %> </li>
-  <li></li>
-  <li><%= link_to "Your projects", :anchor => "projects"%></li>
+  <% if user_signed_in? && @user.id == current_user.id %>
+    <li> <%= link_to "Your articles", :anchor => "articles" %> </li>
+    <li></li>
+    <li><%= link_to "Your projects", :anchor => "projects"%></li>
+  <% else %>
+    <li> <%= link_to "Articles", :anchor => "articles" %> </li>
+    <li></li>
+    <li><%= link_to "Projects", :anchor => "projects"%></li>
+  <% end %>
 </ul>
 
 <div class="block-divider">
