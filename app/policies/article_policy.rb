@@ -20,5 +20,4 @@ class ArticlePolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
 end
