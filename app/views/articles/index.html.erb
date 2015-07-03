@@ -35,7 +35,7 @@ tk-jaf-bernino-sans   title -->
 
             </div>
             <div class="tk-freight-text-pro">
-              <p><%= article.content.split(" ").first(35).join(" ") + "..." %></p>
+              <p><%= markdown_to_html(article.content.split(" ").first(35).join(" ") + "...") %></p>
               <br>
             </div>
             <div class="text-left">
@@ -48,7 +48,7 @@ tk-jaf-bernino-sans   title -->
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-10 col-xs-offset-10">
+        <div class="col-xs-10">
           <hr>
         </div>
       </div>
