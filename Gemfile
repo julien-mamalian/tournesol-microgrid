@@ -12,6 +12,7 @@ gem "devise"
 gem "pundit"
 gem "paperclip"
 gem "aws-sdk", "< 2.0"
+gem "autoprefixer-rails"
 
 gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
@@ -23,6 +24,7 @@ gem 'rails-bootstrap-markdown'
 gem "rails-i18n"
 gem "devise-i18n"
 gem "devise-i18n-views"
+gem "better_errors"
 
 group :development, :test do
   gem "spring"

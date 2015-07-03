@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :accounts, only: [:show]
-
+  resources :accounts, only: [:show, :edit, :update]
   resource :account, only: [:edit, :update]
+
 end
