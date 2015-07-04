@@ -29,7 +29,10 @@
 
           <div class="text-center cmd-small">
             <br>
+            <% if user_signed_in? && @user.id == current_user.id %>
             <%= link_to "Edit profile", edit_account_path %>
+            <%else%>
+            <%end%>
           </div>
       </div>
     </div>
