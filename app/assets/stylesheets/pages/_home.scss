@@ -25,11 +25,42 @@
   }
   h1 {
     font-size: 65px;
-    margin-top: 100px;
-    padding-left: 300px;
   }
 }
 
+.card-black {
+  background: rgba(0,0,0,0.6);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: white;
+}
+
+.card-white {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 1px 1px 2px #E2D9D9;
+  background: white;
+  border-radius: 2px;
+
+}
+#features{
+  // background: image-url('background2.jpg');
+  background-size: cover;
+  background-position: bottom;
+  padding: 240px;
+  color: white;
+  padding: 150px;
+  padding-top: 100px;
+  height: 650px;
+
+  p {
+  font-size:25px;
+  font-weight: 100;
+  }
+  h1 {
+    font-size: 65px;
+  }
+}
 
 .btn-margin{
   margin-top: 20px;
@@ -46,7 +77,6 @@
   color: #1B1717;
   padding: 80px;
   border: 30px
-
 
 }
 
@@ -83,3 +113,7 @@ color:#736C6C;
   margin-top: 25%;
 }
 
+.padding-top-down{
+  padding-top: 36px;
+  padding-bottom:36px;
+}
