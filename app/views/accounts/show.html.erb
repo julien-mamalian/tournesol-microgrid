@@ -37,30 +37,34 @@
       </div>
     </div>
   </div>
+
+  <ul class="list-unstyle list-inline text-center margin-top-50px padding-bottom-50px">
+    <% if user_signed_in? && @user.id == current_user.id && @user.expertise == true %>
+      <li> <%= link_to "Your articles", :anchor => "articles" %> </li>
+      <li></li>
+      <li><%= link_to "Your projects", :anchor => "projects"%></li>
+
+    <% else user_signed_in? && @user.id == current_user.id && @user.expertise == false %>
+      <li> <%= link_to "Favorite articles", :anchor => "articles" %> </li>
+      <li></li>
+      <li><%= link_to "Favorite projects", :anchor => "projects"%></li>
+  </ul>
+      <div class = "text-center">
+      <%= link_to "Request right to publish articles" %>
+      </div>
+    <% end %>
 </div>
 
-
-<ul class="list-unstyle list-inline text-center margin-top-50px padding-bottom-50px">
-  <% if user_signed_in? && @user.id == current_user.id %>
-    <li> <%= link_to "Your articles", :anchor => "articles" %> </li>
-    <li></li>
-    <li><%= link_to "Your projects", :anchor => "projects"%></li>
-  <% else %>
-    <li> <%= link_to "Articles", :anchor => "articles" %> </li>
-    <li></li>
-    <li><%= link_to "Projects", :anchor => "projects"%></li>
-  <% end %>
-</ul>
 
 <div class="block-divider">
   <div>
     <div class="container text-center" id="right-container">
       <div class="row">
         <div class="title text-in-box" id="articles">
-          <% if user_signed_in? && @user.id == current_user.id %>
+          <% if user_signed_in? && @user.id == current_user.id && @user.expertise == true %>
             <p>Your articles</p>
           <% else %>
-          <p>  Articles </p>
+            <p>  Favorite Articles </p>
           <% end %>
         </div>
 
@@ -69,7 +73,7 @@
               <ul class= "list-unstyled">
                 <li><strong><%= link_to article.title, article_path(article)  %></strong></li>
                 <li><%= image_tag article.picture.url(:thumb), id:"thumb_profile", class:"img-circle img-uniform-size"  %></li>
-                <% if user_signed_in? && @user.id == current_user.id %>
+                <% if user_signed_in? && @user.id == current_user.id && @user.expertise == true %>
                 <li><%= link_to "Update", edit_article_path(article) %> <%= link_to "Destroy", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></li>
                 <% else %>
                 <% end %>
