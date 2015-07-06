@@ -24,7 +24,7 @@ gem 'rails-bootstrap-markdown'
 gem "rails-i18n"
 gem "devise-i18n"
 gem "devise-i18n-views"
-gem "better_errors"
+gem 'activeadmin', github: 'activeadmin'
 
 group :development, :test do
   gem "spring"

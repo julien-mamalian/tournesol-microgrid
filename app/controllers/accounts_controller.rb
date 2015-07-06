@@ -1,11 +1,9 @@
 class AccountsController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
-  skip_before_action :authenticate_user!, only: [:show]
   skip_after_action :verify_authorized
 
+  before_action :set_user
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
@@ -14,6 +12,14 @@ class AccountsController < ApplicationController
 
   def update
     @user.update(user_params)
+    redirect_to account_path
+  end
+
+  def right_request
+    @user.requested_rights = "Pending"
+    @user.save
+
+    flash[:notice] = "Your request has been sent !"
     redirect_to account_path
   end
 
