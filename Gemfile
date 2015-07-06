@@ -28,6 +28,7 @@ gem "devise-i18n-views"
 gem 'activeadmin', github: 'activeadmin'
 gem "gmaps4rails"
 gem "rails-assets-underscore"
+gem 'better_errors'
 
 group :development, :test do
   gem "spring"
