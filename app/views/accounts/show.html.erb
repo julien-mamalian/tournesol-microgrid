@@ -1,11 +1,5 @@
-<% if  user_signed_in?%>
-  <%= content_for(:title) do %>
-    <%= @user.first_name %>
-  <% end %>
-<% else %>
-  <%= content_for(:title) do %>
-    <%= "Profile" %>
-  <% end %>
+<%= content_for(:title) do %>
+  <%= @user.first_name %>
 <% end %>
 
 <div id="relative">
@@ -27,32 +21,35 @@
            <%=@user.function%> at <%=@user.entreprise%> in <%=@user.city%>
           </div>
 
+          <div class="text-center">
+          Request to post content : <%= @user.requested_rights %>
+          </div>
+
           <div class="text-center cmd-small">
             <br>
-            <% if user_signed_in? && @user.id == current_user.id %>
             <%= link_to "Edit profile", edit_account_path %>
-            <%else%>
-            <%end%>
           </div>
       </div>
     </div>
   </div>
 
   <ul class="list-unstyle list-inline text-center margin-top-50px padding-bottom-50px">
-    <% if user_signed_in? && @user.id == current_user.id && @user.expertise == true %>
+    <% if @user.expertise == true %>
       <li> <%= link_to "Your articles", :anchor => "articles" %> </li>
       <li></li>
       <li><%= link_to "Your projects", :anchor => "projects"%></li>
-
-    <% else user_signed_in? && @user.id == current_user.id && @user.expertise == false %>
+    <% else %>
       <li> <%= link_to "Favorite articles", :anchor => "articles" %> </li>
       <li></li>
       <li><%= link_to "Favorite projects", :anchor => "projects"%></li>
-  </ul>
-      <div class = "text-center">
-      <%= link_to "Request right to publish articles" %>
-      </div>
     <% end %>
+  </ul>
+  <% if @user.expertise == false && @user.requested_rights == "Not sent" %>
+    <div class = "text-center">
+      <%= link_to "Request right to publish articles", right_request_account_path, method: :post %>
+    </div>
+  <% end %>
+
 </div>
 
 
