@@ -29,7 +29,10 @@
 
           <div class="text-center cmd-small">
             <br>
+            <% if user_signed_in? && @user.id == current_user.id %>
             <%= link_to "Edit profile", edit_account_path %>
+            <%else%>
+            <%end%>
           </div>
       </div>
     </div>
@@ -38,9 +41,15 @@
 
 
 <ul class="list-unstyle list-inline text-center margin-top-50px padding-bottom-50px">
-  <li> <%= link_to "Your articles", :anchor => "articles" %> </li>
-  <li></li>
-  <li><%= link_to "Your projects", :anchor => "projects"%></li>
+  <% if user_signed_in? && @user.id == current_user.id %>
+    <li> <%= link_to "Your articles", :anchor => "articles" %> </li>
+    <li></li>
+    <li><%= link_to "Your projects", :anchor => "projects"%></li>
+  <% else %>
+    <li> <%= link_to "Articles", :anchor => "articles" %> </li>
+    <li></li>
+    <li><%= link_to "Projects", :anchor => "projects"%></li>
+  <% end %>
 </ul>
 
 <div class="block-divider">
@@ -51,7 +60,7 @@
           <% if user_signed_in? && @user.id == current_user.id %>
             <p>Your articles</p>
           <% else %>
-          <p>  <%= @user.first_name %> 's articles </p>
+          <p>  Articles </p>
           <% end %>
         </div>
 
