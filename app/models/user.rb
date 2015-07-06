@@ -27,6 +27,8 @@
 #  picture_updated_at     :datetime
 #  admin                  :boolean          default(FALSE), not null
 #  requested_rights       :string           default("Not sent"), not null
+#  latitude               :float
+#  longitude              :float
 #
 # Indexes
 #
@@ -39,6 +41,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  geocoded_by :city
+  after_validation :geocode, if: :city_changed?
 
   validates_inclusion_of :requested_rights, in: ["Not sent","Pending", "Accepted", "Rejected"]
 

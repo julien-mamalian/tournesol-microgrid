@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+source 'https://rails-assets.org'
 
 ruby "2.2.2"
 gem "redcarpet"
@@ -25,6 +26,8 @@ gem "rails-i18n"
 gem "devise-i18n"
 gem "devise-i18n-views"
 gem 'activeadmin', github: 'activeadmin'
+gem "gmaps4rails"
+gem "rails-assets-underscore"
 
 group :development, :test do
   gem "spring"

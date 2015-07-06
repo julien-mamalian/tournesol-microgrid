@@ -5,4 +5,10 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def index
+    @markers = Gmaps4rails.build_markers(@users) do |user, marker|
+    marker.lat user.latitude
+    marker.lng user.longitude
+  end
 end
