@@ -44,12 +44,11 @@
       <li><%= link_to "Favorite projects", :anchor => "projects"%></li>
     <% end %>
   </ul>
-  <% if @user.expertise == false && @user.requested_rights == "Not sent" %>
+  <% if @user.expertise == nil && @user.requested_rights == "Not sent" %>
     <div class = "text-center">
       <%= link_to "Request right to publish articles", right_request_account_path, method: :post %>
     </div>
   <% end %>
-
 </div>
 
 
