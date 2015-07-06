@@ -71,3 +71,18 @@
   </div>
 </div>
 
+<div class="comments_part">
+  <div id="comments">
+    <% if @article.comments_articles.blank? %>
+      <p id="comments-empty"> Pas de commentaires pour cet article </p>
+    <% else %>
+      <% @article.comments_articles.each do |comment| %>
+        <%= render "comments_articles/show", comment: comment %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= render 'comments_articles/form', article: @article, comment: @comment %>
+
+</div>
+

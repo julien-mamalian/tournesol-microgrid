@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles
+  has_many :comments_articles
 
   has_attached_file :picture,
     styles: { medium: "300x300>", thumb: "100x100>" }

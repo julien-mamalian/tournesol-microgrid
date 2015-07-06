@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   var pos = $('.navbar').height() + $('.article_show_content').height() - $(window).height()
 
   $('.article_show_writter').css({

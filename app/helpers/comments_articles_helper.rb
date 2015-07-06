@@ -1,0 +1,2 @@
+module CommentsArticlesHelper
+end

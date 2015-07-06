@@ -1,0 +1,15 @@
+<div id="comment-<%= comment.id %>" class="comment">
+  <%= comment.description %>
+
+  <% if policy(comment).destroy? %>
+    <%= link_to "Destroy", article_comments_article_path(comment.article, comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+  <% end %>
+
+  <% if policy(comment).update? %>
+    <%= link_to "Editer", edit_article_comments_article_path(comment.article, comment), class: "edit-comment--link" %>
+  <% end %>
+
+  <div id="edit-<%= comment.id %>" class='edit_comment'>
+    <%= render 'comments_articles/form', article: comment.article, comment: comment %>
+  </div>
+</div>

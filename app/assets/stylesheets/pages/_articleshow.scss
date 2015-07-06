@@ -196,10 +196,10 @@ body {
   #article_show {
     h1 {
       font-weight: bold;
-      font-size: 40px;
+      font-size: 35px;
     }
     p {
-      font-size: 25px;
+      font-size: 22px;
     }
     #button_profile {
       font-size: 16px;
@@ -228,4 +228,8 @@ body {
       }
     }
   }
+}
+
+.edit_comment {
+  display: none;
 }
