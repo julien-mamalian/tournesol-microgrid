@@ -5,7 +5,7 @@
     $(document).on('ready', function() {
       handler = Gmaps.build('Google');
       handler.buildMap({ internal: { id: 'map' } }, function(){
-        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        markers = handler.addMarkers(<%= raw @user_coordinates.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
       });

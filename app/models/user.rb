@@ -29,6 +29,7 @@
 #  requested_rights       :string           default("Not sent"), not null
 #  latitude               :float
 #  longitude              :float
+#  address                :string
 #
 # Indexes
 #
@@ -41,6 +42,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
 
   validates_inclusion_of :requested_rights, in: ["Not sent","Pending", "Accepted", "Rejected"]
 
