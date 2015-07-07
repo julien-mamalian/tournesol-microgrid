@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+source 'https://rails-assets.org'
 
 ruby "2.2.2"
 gem "redcarpet"
@@ -24,7 +25,10 @@ gem 'rails-bootstrap-markdown'
 gem "rails-i18n"
 gem "devise-i18n"
 gem "devise-i18n-views"
-gem "better_errors"
+gem 'activeadmin', github: 'activeadmin'
+gem "gmaps4rails"
+gem "rails-assets-underscore"
+gem 'better_errors'
 
 group :development, :test do
   gem "spring"

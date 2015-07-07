@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   # root 'articles#index'
   resources :articles do
     resources :comments_articles
@@ -6,7 +7,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :accounts, only: [:show, :edit, :update]
-  resource :account, only: [:edit, :update]
+  resources :profiles, only: [:show, :index]
+
+  resource :account, only: [:show, :edit, :update] do
+    member do
+      post "right_request"
+    end
+  end
 
 end

@@ -1,0 +1,50 @@
+<%= content_for(:title) do %>
+  <%= "Profile" %>
+<% end %>
+
+<div id="relative">
+  &nbsp;
+  <div id="absolute">
+  <%= link_to (image_tag @user.picture.url(:thumb), class: "img-circle"), edit_account_path%>
+  </div>
+</div>
+
+<div id="description">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 ">
+          <div class="text-center">
+            <h1><%= @user.first_name %> <%=@user.last_name%> </h1>
+          </div>
+
+          <div class="text-center">
+           <%=@user.function%> at <%=@user.entreprise%> in <%=@user.city%>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="block-divider">
+  <div>
+    <div class="container text-center" id="right-container">
+      <div class="row">
+        <div class="title text-in-box" id="articles">
+          <p>  Favorite Articles </p>
+        </div>
+
+          <% @user.articles.each do |article| %>
+            <div class="col-xs-3 card-shadowed">
+              <ul class= "list-unstyled">
+                <li><strong><%= link_to article.title, article_path(article)  %></strong></li>
+                <li><%= image_tag article.picture.url(:thumb), id:"thumb_profile", class:"img-circle img-uniform-size"  %></li>
+              </ul>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
