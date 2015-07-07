@@ -1,6 +1,8 @@
 class CommentsArticlesController < ApplicationController
   before_action :find_article
   before_action :find_comment, only: [:edit, :update, :destroy]
+  skip_after_action :verify_authorized
+  skip_before_action :verify_policy_scoped
   # skip_before_action :authenticate_user!, only: [:show]
   # skip_after_action :verify_authorized
 
@@ -64,6 +66,12 @@ class CommentsArticlesController < ApplicationController
       format.html { redirect_to article_path(@article) }
       format.js
     end
+  end
+
+  def upvote
+    @comment = CommentsArticle.find(params[:id])
+    @comment.upvote_by current_user
+    redirect_to :back
   end
 
   private

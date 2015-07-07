@@ -9,6 +9,7 @@
 #  date_creation :date
 #  article_id    :integer
 #  user_id       :integer
+#  votes         :integer
 #
 # Indexes
 #
@@ -17,6 +18,8 @@
 #
 
 class CommentsArticle < ActiveRecord::Base
+  acts_as_votable
+
   belongs_to :user
   belongs_to :article
 end

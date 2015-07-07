@@ -10,8 +10,19 @@ Rails.application.routes.draw do
   end
 
   resources :articles do
-    resources :comments_articles
+    resources :comments_articles do
+      member do
+        put "like", to: "comments_articles#upvote"
+        put "dislike", to: "comments_articles#downvote"
+      end
+    end
   end
+
+
+
+  # resources :articles do
+  #   resources :comments_articles
+  # end
 
   resources :projects do
     resources :projects_comments
@@ -26,5 +37,5 @@ Rails.application.routes.draw do
       post "right_request"
     end
   end
-
 end
+

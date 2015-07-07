@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150707132513) do
     t.date     "date_creation"
     t.integer  "article_id"
     t.integer  "user_id"
+    t.integer  "votes"
   end
 
   add_index "comments_articles", ["article_id"], name: "index_comments_articles_on_article_id", using: :btree
