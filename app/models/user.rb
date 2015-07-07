@@ -29,6 +29,7 @@
 #  requested_rights       :string           default("Not sent"), not null
 #  latitude               :float
 #  longitude              :float
+#  address                :string
 #
 # Indexes
 #
@@ -39,6 +40,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  acts_as_voter
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
