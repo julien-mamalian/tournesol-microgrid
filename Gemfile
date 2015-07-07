@@ -29,6 +29,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem "gmaps4rails"
 gem "rails-assets-underscore"
 gem 'better_errors'
+gem 'geocoder'
 
 group :development, :test do
   gem "spring"

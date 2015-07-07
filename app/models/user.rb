@@ -43,6 +43,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  geocoded_by :city
+  after_validation :geocode, if: :city_changed?
 
   validates_inclusion_of :requested_rights, in: ["Not sent","Pending", "Accepted", "Rejected"]
 
@@ -53,4 +55,5 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
+
 end
