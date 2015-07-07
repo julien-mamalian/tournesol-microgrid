@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action  :find_article, only: [:show, :edit, :destroy, :update, :upvote, :score]
-  after_action :find_article, only: [:score]
+  before_action  :find_article, only: [:show, :edit, :destroy, :update, :upvote]
   skip_after_action :verify_policy_scoped
   skip_before_action :authenticate_user!, only: [:index, :show]
 

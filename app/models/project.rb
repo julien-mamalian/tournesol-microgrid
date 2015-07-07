@@ -18,6 +18,7 @@
 #  user_id              :integer
 #  description          :string
 #  project_advancement  :string
+#  votes                :integer
 #
 # Indexes
 #
@@ -27,6 +28,7 @@
 class Project < ActiveRecord::Base
   has_many :projects_comments
   belongs_to :user
+  acts_as_votable
 
   validates_inclusion_of :project_advancement, in: ["Initialized", "Started", "In construction", "Finalizing", "Deployed"]
 

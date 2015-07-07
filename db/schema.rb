@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707132513) do
+ActiveRecord::Schema.define(version: 20150707170320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150707132513) do
     t.integer  "user_id"
     t.string   "description"
     t.string   "project_advancement"
+    t.integer  "votes"
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
@@ -85,6 +86,7 @@ ActiveRecord::Schema.define(version: 20150707132513) do
     t.integer  "project_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "votes"
   end
 
   add_index "projects_comments", ["project_id"], name: "index_projects_comments_on_project_id", using: :btree
@@ -117,6 +119,7 @@ ActiveRecord::Schema.define(version: 20150707132513) do
     t.string   "requested_rights",       default: "Not sent", null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "address"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

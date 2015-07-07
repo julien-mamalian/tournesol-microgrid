@@ -1,8 +1,14 @@
 class ProjectsController < ApplicationController
-  before_action  :find_project, only: [:show, :edit, :destroy, :update]
+  before_action  :find_project, only: [:show, :edit, :destroy, :update, :upvote]
   skip_after_action :verify_policy_scoped
   skip_before_action :authenticate_user!, only: [:index, :show]
 
+  def upvote
+    authorize @project
+    @project = Project.find(params[:id])
+    @project.upvote_by current_user
+    redirect_to :back
+  end
 
   def index
     @projects = policy_scope(Project)
@@ -41,6 +47,7 @@ class ProjectsController < ApplicationController
     @project.destroy
     redirect_to :back
   end
+
 
   private
 

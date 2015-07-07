@@ -8,6 +8,7 @@
 #  project_id  :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  votes       :integer
 #
 # Indexes
 #
@@ -18,4 +19,5 @@
 class ProjectsComment < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
+  acts_as_votable
 end

@@ -1,11 +1,17 @@
 class ProjectsCommentsController < ApplicationController
   before_action :find_project
-  before_action :find_comment, only: [:edit, :update, :destroy]
-  # skip_before_action :authenticate_user!, only: [:show]
-  # skip_after_action :verify_authorized
+  before_action :find_comment, only: [:edit, :update, :destroy, :upvote]
+  skip_before_action :authenticate_user!, only: [:show]
+  skip_after_action :verify_authorized
 
   def index
     @comments = ProjectsComment.all
+  end
+
+  def upvote
+    @comment = ProjectsComment.find(params[:id])
+    @comment.upvote_by current_user
+    redirect_to :back
   end
 
   def edit
