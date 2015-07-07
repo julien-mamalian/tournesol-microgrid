@@ -20,6 +20,8 @@
 #
 
 class Article < ActiveRecord::Base
+  acts_as_votable
+
   belongs_to :user
   has_many :comments_articles
   has_attached_file :picture,
@@ -27,4 +29,5 @@ class Article < ActiveRecord::Base
 
     validates_attachment_content_type :picture,
       content_type: /\Aimage\/.*\z/
+
 end
