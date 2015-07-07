@@ -9,6 +9,7 @@
 #  date_creation :date
 #  article_id    :integer
 #  user_id       :integer
+#  votes         :integer
 #
 # Indexes
 #

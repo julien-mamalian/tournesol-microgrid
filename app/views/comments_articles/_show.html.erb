@@ -19,7 +19,7 @@
     <div class="col-xs-12 tk-freight-text-pro">
       <br>
       <p><%= comment.description %></p>
-      <%= link_to "upvote", like_link_path(comments_articles), method: :put %>
+      <%= comment.get_upvotes.size %> votes -  <%= link_to "Like this comment", like_article_comments_article_path(comment.article, comment), method: :put %>
     </div>
     <div class="col-xs-8">
       <hr>
