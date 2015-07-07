@@ -19,14 +19,30 @@ Rails.application.routes.draw do
   end
 
 
+  resources :projects do
+    member do
+      put "like", to: "projects#upvote"
+      put "dislike", to: "projects#downvote"
+    end
+  end
+
+
+  resources :projects do
+    resources :projects_comments do
+      member do
+        put "like", to: "projects_comments#upvote"
+        put "dislike", to: "projects_comments#downvote"
+      end
+    end
+  end
 
   # resources :articles do
   #   resources :comments_articles
   # end
 
-  resources :projects do
-    resources :projects_comments
-  end
+  # resources :projects do
+  #   resources :projects_comments
+  # end
 
   devise_for :users
 

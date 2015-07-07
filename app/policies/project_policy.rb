@@ -13,6 +13,10 @@ class ProjectPolicy < ApplicationPolicy
     true
   end
 
+  def upvote?
+    true
+  end
+
   def update?
     record.user == user
   end

@@ -11,6 +11,7 @@
     </div>
     <div class="text-center article_show_content_title tk-jaf-bernino-sans">
       <h1 id='title'><%= @project.title%></h1>
+      <%= @project.get_upvotes.size %> votes -  <%= link_to "Like", like_project_path(@project), method: :put %>
     </div>
 
     <div class="article_show_content_text tk-freight-text-pro">
