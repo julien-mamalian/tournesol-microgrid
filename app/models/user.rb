@@ -48,6 +48,8 @@ class User < ActiveRecord::Base
 
   has_many :articles
   has_many :comments_articles
+  has_many :projects
+  has_many :projects_comments
 
   has_attached_file :picture,
     styles: { medium: "300x300>", thumb: "100x100>" }

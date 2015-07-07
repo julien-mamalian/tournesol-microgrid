@@ -1,0 +1,111 @@
+  <div id="retour_link">
+    <%= link_to "Retour", :back, id:"back_link_2", class:"tk-europa" %>
+  </div>
+
+<div id="article_show">
+  <div class="article_show_content">
+    <div class="text-center article_show_content_picture">
+      <% if @project.picture %>
+        <%= image_tag @project.picture, class:'project_show_picture' %>
+      <%end %>
+    </div>
+    <div class="text-center article_show_content_title tk-jaf-bernino-sans">
+      <h1 id='title'><%= @project.title%></h1>
+    </div>
+
+    <div class="article_show_content_text tk-freight-text-pro">
+      <p class="tk-freight-text-pro"><%= markdown_to_html(@project.content) %></p>
+    </div>
+  </div>
+
+
+  <div class="article_show_writter navbar-fixed ">
+    <div class="profile_info_writter">
+      <div class="text-center">
+        <%= image_tag @project.user.picture.url(:thumb), class:"writter_picture img-circle" %>
+      </div>
+      <div class="text-center tk-freight-text-pro">
+        <%= @project.user.first_name %> <%= @project.user.last_name %>
+        <hr>
+      </div>
+      <div class="enterprise_writter text-left">
+        <div class="text-center">
+          <strong><p class="tk-jaf-bernino-sans"> Microgrid's details </p></strong>
+        </div>
+        <p class="tk-freight-text-pro">
+        <strong>Place:</strong> <%= @project.city %>        <br>
+        <strong>Country:</strong> <%= @project.country %> <br>
+        <strong>Date of creation:</strong> <%= @project.datecreation %>
+        <br>
+        <strong>Area:</strong> <%= @project.area %> kilometers square.
+        <br>
+        <strong>Description:</strong> <%= @project.description %>
+        <br> <br>
+        <hr>
+        <strong>Advancement:</strong> <div class="tk-freight-text-pro">
+          <%= @project.project_advancement %>
+        </div>
+
+        <div class="advancement_details">
+          <% if @project.project_advancement == "Initialized" %>
+            <div class="text-center advancement_number col-xs-2 red" >1</div>
+            <div class="text-center advancement_number col-xs-2 " >2</div>
+            <div class="text-center advancement_number col-xs-2 " >3</div>
+            <div class="text-center advancement_number col-xs-2 " >4</div>
+            <div class="text-center advancement_number col-xs-2 " >5</div>
+          <% elsif @project.project_advancement == "In construction" %>
+            <div class="text-center advancement_number col-xs-2 orange" >1</div>
+            <div class="text-center advancement_number col-xs-2 orange" >2</div>
+            <div class="text-center advancement_number col-xs-2 " >3</div>
+            <div class="text-center advancement_number col-xs-2 " >4</div>
+            <div class="text-center advancement_number col-xs-2 " >5</div>
+          <% elsif @project.project_advancement == "Finalizing" %>
+            <div class="text-center advancement_number col-xs-2 yellow" >1</div>
+            <div class="text-center advancement_number col-xs-2 yellow" >2</div>
+            <div class="text-center advancement_number col-xs-2 yellow" >3</div>
+            <div class="text-center advancement_number col-xs-2 " >4</div>
+            <div class="text-center advancement_number col-xs-2 " >5</div>
+          <% elsif @project.project_advancement == "Deployed" %>
+            <div class="text-center advancement_number col-xs-2 green" >1</div>
+            <div class="text-center advancement_number col-xs-2 green" >2</div>
+            <div class="text-center advancement_number col-xs-2 green" >3</div>
+            <div class="text-center advancement_number col-xs-2 green" >4</div>
+            <div class="text-center advancement_number col-xs-2 " >5</div>
+          <% else %>
+            <div class="text-center advancement_number col-xs-2 light-green" >1</div>
+            <div class="text-center advancement_number col-xs-2 light-green" >2</div>
+            <div class="text-center advancement_number col-xs-2 light-green" >3</div>
+            <div class="text-center advancement_number col-xs-2 light-green" >4</div>
+            <div class="text-center advancement_number col-xs-2 light-green" >5</div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comments_part">
+    <div class="text-left">
+      <h4 class='tk-jaf-bernino-sans'> Comments </h4>
+      <div class="col-xs-8">
+        <hr>
+      </div>
+      <br>
+    </div>
+
+  <div id="comments">
+    <% if @project.projects_comments.blank? %>
+      <p id="comments-empty"> Pas de commentaires pour ce projet</p>
+    <% else %>
+      <div class="list_of_comments">
+        <% @project.projects_comments.each do |comment| %>
+          <%= render "projects_comments/show", comment: comment %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+ <div class="text-left" id="comments_creation">
+    <%= render 'projects_comments/form', project: @project, comment: @comment %>
+ </div>
+
+</div>
