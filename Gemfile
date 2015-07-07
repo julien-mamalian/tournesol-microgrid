@@ -14,6 +14,7 @@ gem "pundit"
 gem "paperclip"
 gem "aws-sdk", "< 2.0"
 gem "autoprefixer-rails"
+gem 'acts_as_votable', '~> 0.10.0'
 
 gem "jquery-rails"
 gem "sass-rails", "~> 5.0"

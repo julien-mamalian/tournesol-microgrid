@@ -2,6 +2,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # root 'articles#index'
   resources :articles do
+    member do
+      put "like", to: "articles#upvote"
+       put "dislike", to: "articles#downvote"
+    end
+  end
+
+  resources :articles do
     resources :comments_articles
   end
 

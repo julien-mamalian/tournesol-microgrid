@@ -11,11 +11,11 @@
     </div>
     <div class="text-center article_show_content_title tk-jaf-bernino-sans">
       <h1 id='title'><%= @article.title%></h1>
+      <%= @article.get_upvotes.size %> votes -  <%= link_to "Like this article", like_article_path(@article), method: :put %>
     </div>
 
     <div class="article_show_content_text tk-freight-text-pro">
       <p class="tk-freight-text-pro"><%= markdown_to_html(@article.content) %></p>
-      <%= @article.votes %>
     </div>
   </div>
 

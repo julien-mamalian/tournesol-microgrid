@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action  :find_article, only: [:show, :edit, :destroy, :update]
+  before_action  :find_article, only: [:show, :edit, :destroy, :update, :upvote, :score]
+  after_action :find_article, only: [:score]
   skip_after_action :verify_policy_scoped
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -14,7 +15,6 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-
     authorize @article
   end
 
@@ -39,6 +39,13 @@ class ArticlesController < ApplicationController
   def destroy
     authorize @article
     @article.destroy
+    redirect_to :back
+  end
+
+  def upvote
+    authorize @article
+    @article = Article.find(params[:id])
+    @article.upvote_by current_user
     redirect_to :back
   end
 
