@@ -1,0 +1,57 @@
+ <div id="index_article">
+  <div class="text-center">
+    <h2 class='tk-europa' >List of Microgrids</h2>
+    <br>
+  </div>
+  <div class="vertical-spacer"></div>
+
+  <div class="container">
+    <% @projects.each do |project| %>
+<!--
+tk-freight-text-pro    descriptoion
+tk-jaf-bernino-sans   title -->
+
+
+      <div class="row tk-europa" id='article'>
+
+        <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2">
+          <div class="article_content" id="contenu_width_750">
+
+           <div class="author_details">
+             <%= image_tag project.user.picture, class:'img-circle author_picture'%>
+
+           </div>
+           <%= link_to project_path(project) do %>
+           <div class="articles_index_container_picture text-center">
+             <% if project.picture %>
+               <%= image_tag project.picture, class:'articles_index_picture' %>
+             <%end %>
+           </div>
+            <% end %>
+            <div class="tk-jaf-bernino-sans">
+              <h4><%= project.title %></h4>
+
+            </div>
+            <div class="tk-freight-text-pro">
+              <p><%= markdown_to_html(project.content.split(" ").first(35).join(" ") + "...") %></p>
+              <br>
+            </div>
+            <div class="text-left">
+              <%= link_to "Show Microgrid", project_path(project) %>
+            </div>
+          </div>
+        </div>
+        <div class="hidden-xs hidden-md col-lg-4" id="bottom_picture">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <hr>
+        </div>
+      </div>
+
+
+    <% end %>
+  </div>
+</div>

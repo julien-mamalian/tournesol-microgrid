@@ -1,0 +1,32 @@
+.project_show_picture {
+  max-width: 100%;
+}
+
+.advancement_details {
+  width: 80%;
+  margin-top: 30px;
+  .advancement_number {
+    width: 20%;
+    height: 25px;
+    display: inline;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .red {
+    background-color: red;
+  }
+  .orange {
+    background-color: orange;
+  }
+  .green {
+    background-color: green;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  .light-green {
+    background-color: #5FEB40;
+  }
+}
+
+

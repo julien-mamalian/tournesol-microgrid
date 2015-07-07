@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
   ActiveAdmin.routes(self)
   # root 'articles#index'
   resources :articles do
     resources :comments_articles
+  end
+
+  resources :projects do
+    resources :projects_comments
   end
 
   devise_for :users
