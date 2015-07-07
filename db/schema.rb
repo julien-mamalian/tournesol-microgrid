@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150706155115) do
 
   # These are extensions that must be enabled in order to support this database
@@ -45,6 +46,18 @@ ActiveRecord::Schema.define(version: 20150706155115) do
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
+
+  create_table "comments_articles", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "description"
+    t.date     "date_creation"
+    t.integer  "article_id"
+    t.integer  "user_id"
+  end
+
+  add_index "comments_articles", ["article_id"], name: "index_comments_articles_on_article_id", using: :btree
+  add_index "comments_articles", ["user_id"], name: "index_comments_articles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",         null: false

@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
 
   def show
     authorize @article
+    @comment = CommentsArticle.new
   end
 
   def new
@@ -42,6 +43,7 @@ class ArticlesController < ApplicationController
   end
 
   private
+
   def article_params
     params.require(:article).permit(:picture, :title, :content, :votes, :user_id)
   end

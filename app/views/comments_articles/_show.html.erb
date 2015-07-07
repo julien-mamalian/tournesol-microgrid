@@ -1,0 +1,32 @@
+<div id="comment-<%= comment.id %>" class="comment">
+  <div class="row">
+    <div class="col-xs-12 tk-jaf-bernino-sans">
+      <div class="picture_left">
+        <%= image_tag comment.user.picture.url(:thumb), class:'img-circle img-comment' %>
+      </div>
+      <div class="details_right">
+        <%= comment.user.first_name %> <%= comment.user.last_name %>
+        <br>
+        <p class='date_ago tk-freight-text-pro'> <%= (Date.today - comment.date_creation).to_i %> days ago.
+        <% if policy(comment).destroy? %>
+          <%= link_to " Destroy ", article_comments_article_path(comment.article, comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+        <% end %>
+        <% if policy(comment).update? %>
+          <%= link_to " Edit ", edit_article_comments_article_path(comment.article, comment), class: "edit-comment--link" %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 tk-freight-text-pro">
+      <br>
+      <p><%= comment.description %></p>
+    </div>
+    <div class="col-xs-8">
+      <hr>
+    </div>
+  </div>
+
+  <div id="edit-<%= comment.id %>" class='edit_comment tk-jaf-bernino-sans'>
+    <%= render 'comments_articles/form', article: comment.article, comment: comment%>
+    <br>
+  </div>
+</div>

@@ -196,10 +196,10 @@ body {
   #article_show {
     h1 {
       font-weight: bold;
-      font-size: 40px;
+      font-size: 35px;
     }
     p {
-      font-size: 25px;
+      font-size: 22px;
     }
     #button_profile {
       font-size: 16px;
@@ -225,7 +225,12 @@ body {
       }
       .article_show_writter {
         width: 300px;
+        overflow: auto;
       }
     }
   }
+}
+
+.edit_comment {
+  display: none;
 }
