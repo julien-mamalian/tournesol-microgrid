@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'home#index'
-  resources :articles
+
+  # root 'articles#index'
+  resources :articles do
+    resources :comments_articles
+  end
+
 
   devise_for :users
 

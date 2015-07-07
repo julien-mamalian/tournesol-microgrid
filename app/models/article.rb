@@ -21,6 +21,7 @@
 
 class Article < ActiveRecord::Base
   belongs_to :user
+  has_many :comments_articles
   has_attached_file :picture,
       styles: { medium: "300x300>", thumb: "100x100>" }
 

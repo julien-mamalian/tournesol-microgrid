@@ -49,6 +49,7 @@ class User < ActiveRecord::Base
   validates_inclusion_of :requested_rights, in: ["Not sent","Pending", "Accepted", "Rejected"]
 
   has_many :articles
+  has_many :comments_articles
 
   has_attached_file :picture,
     styles: { medium: "300x300>", thumb: "100x100>" }

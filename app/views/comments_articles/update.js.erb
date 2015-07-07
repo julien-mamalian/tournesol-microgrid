@@ -1,0 +1,2 @@
+var edited_comment = $("<%= j render 'comments_articles/show', comment: @comment %>");
+$('#comment-<%= @comment.id %>').html(edited_comment);
