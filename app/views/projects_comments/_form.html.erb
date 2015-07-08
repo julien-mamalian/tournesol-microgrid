@@ -1,8 +1,8 @@
 <%= simple_form_for([project, comment], remote: true) do |f| %>
 
-  <%= f.input :description, class: "form_control" %>
+  <%= f.input :description, input_html: { class: "form_control comment-description" } %>
   <%= f.hidden_field :user_id, :value => current_user.id%>
 
-  <%= f.button :submit, class: "btn-primary", id:"input_validate" %>
+  <%= f.button :submit,  class: "btn-primary", id:"input_validate" %>
 
 <% end %>
