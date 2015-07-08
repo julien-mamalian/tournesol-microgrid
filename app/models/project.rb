@@ -29,6 +29,7 @@
 
 class Project < ActiveRecord::Base
   acts_as_votable
+  acts_as_followable
 
   geocoded_by :city
   after_validation :geocode, if: :city_changed?

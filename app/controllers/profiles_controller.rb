@@ -9,4 +9,18 @@ class ProfilesController < ApplicationController
   def index
     @users = User.all
   end
+
+  def follow
+    @user= User.find(params[:id])
+    current_user.follow(@user)
+    @user.save
+    redirect_to :back
+  end
+
+  def unfollow
+  @user= User.find(params[:id])
+  current_user.stop_following(@user)
+  @user.save
+  redirect_to :back
+  end
 end
