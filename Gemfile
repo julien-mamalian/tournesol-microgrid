@@ -2,6 +2,7 @@ source "https://rubygems.org"
 source 'https://rails-assets.org'
 
 ruby "2.2.2"
+gem 'ransack'
 gem 'shareable'
 gem "redcarpet"
 gem "rails", "4.2.3"
