@@ -83,9 +83,12 @@
           <hr>
         <div class="linked-articles">
           <strong> Read more about this Microgrid :</strong> <div class="tk-freight-text-pro">
-          <%= link_to "#{Article.find(Project.find(2).links[0].article_id).title}", :back %>
+          <ul>
+            <% @project.articles.each do |article| %>
+              <li><%= link_to "#{article.title}", article_path(article) %></li>
+            <% end %>
+          </ul>
         </div>
-
         </div>
       </div>
     </div>
