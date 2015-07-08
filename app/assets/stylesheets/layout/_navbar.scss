@@ -14,7 +14,7 @@ $navbar-bg: white;
 /* -------------------------------------
  * Box model
  * ------------------------------------- */
-$navbar-height: 50px;
+$navbar-height: 48px;
 $navbar-vertical-padding: 10px;
 $navbar-horizontal-padding: 20px;
 $navbar-border-bottom-width: 1px;
@@ -40,6 +40,9 @@ $navbar-profile-border-width: 2px;
 /* -------------------------------------
  * SCSS code
  * ------------------------------------- */
+
+
+
 .navbar-wagon {
   background: $navbar-bg;
   font-family: $navbar-font-family;
@@ -54,6 +57,7 @@ $navbar-profile-border-width: 2px;
   min-height: 0;
   transition: background 0.4s ease;
   margin-bottom: 0;
+
 
   .navbar-nav > li > a,
   .navbar-nav > .open > a,

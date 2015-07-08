@@ -32,3 +32,43 @@
     }
   }
 // <!--   <%= link_to "DELETE", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %> -->
+
+
+
+// Nouveau menu*
+
+.menu-medium {
+  img {
+    margin-left: 50px;
+  }
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .ul-menu {
+    width: 80% !important;
+  }
+  .menu-position {
+
+    .menu-left {
+      margin-top: 17px;
+      li {
+        display: inline;
+        a {
+        }
+      }
+    }
+    .menu-right {
+      margin-top: 17px;
+      li {
+        display: inline;
+
+        a {
+        }
+      }
+    }
+  }
+}
+
+  // .menu-clear{
+  //   clear: both;
+
+
