@@ -20,6 +20,12 @@
           <div class="text-center">
            <%=@user.function%> at <%=@user.entreprise%> in <%=@user.city%>
           </div>
+          <div class="text-center">
+
+            <%=@user.followers_count %> follower(s)
+            <%= link_to "Follow", follow_profile_path(@user)%>
+            <%= link_to "Unfollow", unfollow_profile_path(@user)%>
+          </div>
       </div>
     </div>
   </div>

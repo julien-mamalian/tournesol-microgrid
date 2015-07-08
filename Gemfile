@@ -33,6 +33,7 @@ gem "gmaps4rails"
 gem "rails-assets-underscore"
 gem 'better_errors'
 gem "geocoder"
+gem "acts_as_follower"
 
 group :development, :test do
   gem "spring"

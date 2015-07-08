@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708083443) do
+ActiveRecord::Schema.define(version: 20150708092337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,19 @@ ActiveRecord::Schema.define(version: 20150708083443) do
 
   add_index "comments_articles", ["article_id"], name: "index_comments_articles_on_article_id", using: :btree
   add_index "comments_articles", ["user_id"], name: "index_comments_articles_on_user_id", using: :btree
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "followable_id",                   null: false
+    t.string   "followable_type",                 null: false
+    t.integer  "follower_id",                     null: false
+    t.string   "follower_type",                   null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables", using: :btree
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -121,6 +134,7 @@ ActiveRecord::Schema.define(version: 20150708083443) do
     t.string   "requested_rights",       default: "Not sent", null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "address"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
