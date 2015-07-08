@@ -1,0 +1,76 @@
+<%= content_for(:title) do %>
+  Home
+<% end %>
+
+<%= content_for(:description) do %>
+  <%# TODO %>
+<% end %>
+
+
+
+  <div id="banner" class="window-height text-center">
+    <div id="animate-home" class="card-black">
+      <h1 class="text-center"> Tournesol Microgrids</h1>
+      <p> A Network of Microgrid pioneers</p>
+      <br>
+        <ul class="list-inline">
+          <li>
+          <%= link_to "View all articles", articles_path, class: "btn btn-success" %>
+          </li>
+          <li>
+            <%= link_to "View all projects", articles_path, class: "btn btn-success" %>
+          </li>
+        </ul>
+
+    </div>
+  </div>
+
+<div id="features">
+  <div  class="card-white text-center">
+    <h2> What is Tournesol Microgrids ?</h2>
+    <div class="padding-top-down">
+      Tournesol Microgrids is a french association whose purpose is to create a community, to build a method, to expand Microgrids.
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div>
+            <%= link_to  (image_tag "http://placehold.it/200x100"), page_path('about')%>
+            <h3> Team </h3>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div>
+            <%= link_to  (image_tag "http://placehold.it/200x100"), page_path('about')%>
+
+            <h3> Mission </h3>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div >
+            <%= link_to  (image_tag "http://placehold.it/200x100"), page_path('about')%>
+            <h3> Plateform </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div id="map" style="width: 100%; height: 600px;"></div>
+
+      <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+          $(document).on('ready', function() {
+            handler = Gmaps.build('Google');
+            handler.buildMap({ internal: { id: 'map' } }, function(){
+              markers = handler.addMarkers(<%= raw @markers.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+            });
+          })
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-
   ActiveAdmin.routes(self)
-  # root 'articles#index'
+  root 'home#index'
+
   resources :articles do
     member do
       put "like", to: "articles#upvote"

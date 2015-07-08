@@ -19,6 +19,8 @@
 #  description          :string
 #  project_advancement  :string
 #  votes                :integer
+#  latitude             :float
+#  longitude            :float
 #
 # Indexes
 #
@@ -26,9 +28,13 @@
 #
 
 class Project < ActiveRecord::Base
-  has_many :projects_comments
-  belongs_to :user
   acts_as_votable
+
+  geocoded_by :city
+  after_validation :geocode, if: :city_changed?
+
+  belongs_to :user
+  has_many :projects_comments
 
   validates_inclusion_of :project_advancement, in: ["Initialized", "Started", "In construction", "Finalizing", "Deployed"]
 
