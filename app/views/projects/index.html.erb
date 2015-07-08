@@ -19,7 +19,7 @@ tk-jaf-bernino-sans   title -->
 
            <div class="author_details">
              <%= image_tag project.user.picture, class:'img-circle author_picture'%>
-
+             <p><%= project.get_upvotes.size %> votes</p>
            </div>
            <%= link_to project_path(project) do %>
            <div class="articles_index_container_picture text-center">

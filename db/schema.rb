@@ -119,7 +119,6 @@ ActiveRecord::Schema.define(version: 20150707170320) do
     t.string   "requested_rights",       default: "Not sent", null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "address"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
