@@ -1,6 +1,6 @@
 <%= simple_form_for([article, comment], remote: true) do |f| %>
 
-  <%= f.input :description, class: "form_control" %>
+  <%= f.input :description, input_html: { class: "form_control comment-description" } %>
   <%= f.hidden_field :date_creation, :value => Time.now%>
   <%= f.hidden_field :user_id, :value => current_user.id%>
 
