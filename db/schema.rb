@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708092337) do
+ActiveRecord::Schema.define(version: 20150708143610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,16 @@ ActiveRecord::Schema.define(version: 20150708092337) do
 
   add_index "follows", ["followable_id", "followable_type"], name: "fk_followables", using: :btree
   add_index "follows", ["follower_id", "follower_type"], name: "fk_follows", using: :btree
+
+  create_table "links", force: :cascade do |t|
+    t.integer  "article_id"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "links", ["article_id"], name: "index_links_on_article_id", using: :btree
+  add_index "links", ["project_id"], name: "index_links_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -155,4 +165,6 @@ ActiveRecord::Schema.define(version: 20150708092337) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  add_foreign_key "links", "articles"
+  add_foreign_key "links", "projects"
 end

@@ -67,6 +67,16 @@
         <% end %>
         <hr>
       </div>
+      <hr>
+      <div class="linked-projects">
+        <strong> About the microgrids :</strong> <div class="tk-freight-text-pro">
+        <ul>
+            <% @article.projects.each do |project| %>
+              <li><%= link_to "#{project.title}", project_path(project) %></li>
+            <% end %>
+          </ul>
+      </div>
+      </div>
     </div>
   </div>
 </div>

@@ -37,6 +37,9 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :projects_comments
 
+  has_many :links
+  has_many :articles, through: :links
+
   validates_inclusion_of :project_advancement, in: ["Initialized", "Started", "In construction", "Finalizing", "Deployed"]
 
   has_attached_file :picture,
