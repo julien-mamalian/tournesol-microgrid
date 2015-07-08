@@ -1,7 +1,24 @@
  <div id="index_article">
   <div class="text-center">
     <h2 class='tk-europa' >List of articles</h2>
-    <br>
+    <div class="text-center container">
+      <%= search_form_for @q do |f| %>
+
+        # Search if the name field contains...
+        <%= f.label :title_cont, "Title contains:" %>
+        <%= f.search_field :title_cont, class:'form-control' %>
+
+        <%= f.label :content_cont, "Content contain:" %>
+        <%= f.search_field :content_cont, class:'form-control' %>
+
+        <%= f.submit %>
+        <br>
+      <% end %>
+
+      <%= sort_link @search, :votes, "Sort by number of votes" %>
+      <%= sort_link @search, :created_at, "Sort by date of creation" %>
+    </div>
+
   </div>
   <div class="vertical-spacer"></div>
 

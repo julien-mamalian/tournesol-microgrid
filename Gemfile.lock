@@ -308,6 +308,7 @@ DEPENDENCIES
   rails-bootstrap-markdown
   rails-i18n
   rails_12factor
+  ransack
   redcarpet
   sass-rails (~> 5.0)
   shareable

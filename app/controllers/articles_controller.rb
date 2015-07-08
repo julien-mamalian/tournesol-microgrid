@@ -6,7 +6,13 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = policy_scope(Article)
+    @q = Article.ransack(params[:q])
+    @people = @q.result(distinct: true)
+
+    @search = Article.search(params[:q])
+    @articles = @search.result
   end
+
 
   def show
     authorize @article

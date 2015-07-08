@@ -6,6 +6,11 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = policy_scope(Project)
+    @q = Project.ransack(params[:q])
+    @people = @q.result(distinct: true)
+
+    @search = Project.search(params[:q])
+    @projects = @search.result
   end
 
   def show
