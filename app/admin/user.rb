@@ -1,4 +1,3 @@
-
 ActiveAdmin.register User do
   form do |f|
     f.inputs "Identity" do

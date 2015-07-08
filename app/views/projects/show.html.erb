@@ -80,6 +80,13 @@
             <div class="text-center advancement_number col-xs-2 light-green" >5</div>
           <% end %>
         </div>
+          <hr>
+        <div class="linked-articles">
+          <strong> Read more about this Microgrid :</strong> <div class="tk-freight-text-pro">
+          <%= link_to "#{Article.find(Project.find(2).links[0].article_id).title}", :back %>
+        </div>
+
+        </div>
       </div>
     </div>
   </div>
