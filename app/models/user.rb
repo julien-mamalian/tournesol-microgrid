@@ -29,7 +29,6 @@
 #  requested_rights       :string           default("Not sent"), not null
 #  latitude               :float
 #  longitude              :float
-#  address                :string
 #
 # Indexes
 #
