@@ -10,13 +10,14 @@
 }
 
 #banner{
-  background: image-url('banner-background.jpg');
+  background: image-url('image-homepage.jpg');
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(5, 5, 5, 0.49)), url(/assets/image-homepage-9e26e29343772aeda9441824c23a313ebf2445b98ff2a40e599de7ff979ddae4.jpg);
   background-size: cover;
   background-position: bottom;
-  padding: 240px;
   color: white;
   padding: 150px;
-  padding-top: 100px;
+  padding-top: 200px;
   height: 650px;
 
   p {
@@ -28,12 +29,6 @@
   }
 }
 
-.card-black {
-  background: rgba(0,0,0,0.6);
-  padding-top: 30px;
-  padding-bottom: 30px;
-  color: white;
-}
 
 .card-white {
   padding-top: 30px;
@@ -44,7 +39,6 @@
 
 }
 #features{
-  // background: image-url('background2.jpg');
   background-size: cover;
   background-position: bottom;
   padding: 240px;
@@ -109,11 +103,14 @@ color:#736C6C;
 }
 
 #search_home {
-
   margin-top: 25%;
 }
 
 .padding-top-down{
   padding-top: 36px;
   padding-bottom:36px;
+}
+
+.big-font{
+  font-size: 100px;
 }

@@ -1,15 +1,14 @@
  <div id="index_article">
   <div class="text-center">
     <h2 class='tk-europa' >List of articles</h2>
-    <div class="text-center container">
+    <div class="text-center container form-inline control-form">
       <%= search_form_for @q do |f| %>
 
-        # Search if the name field contains...
         <%= f.label :title_cont, "Title contains:" %>
         <%= f.search_field :title_cont, class:'form-control' %>
 
         <%= f.label :content_cont, "Content contain:" %>
-        <%= f.search_field :content_cont, class:'form-control' %>
+        <%= f.search_field :content_cont, class:'form-control'%>
 
         <%= f.submit %>
         <br>

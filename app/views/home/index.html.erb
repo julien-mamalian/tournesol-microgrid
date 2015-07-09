@@ -6,10 +6,8 @@
   <%# TODO %>
 <% end %>
 
-
-
-  <div id="banner" class="window-height text-center">
-    <div id="animate-home" class="card-black">
+  <div id="banner" class="window-height text-center" >
+    <div id="animate-home">
       <h1 class="text-center"> Tournesol Microgrids</h1>
       <p> A Network of Microgrid pioneers</p>
       <br>
@@ -24,40 +22,12 @@
 
     </div>
   </div>
+<div class="text-center padding-top-down">
+  Our Nework is growing everyday ! Join us !
+</div>
 
-<div id="features">
-  <div  class="card-white text-center">
-    <h2> What is Tournesol Microgrids ?</h2>
-    <div class="padding-top-down">
-      Tournesol Microgrids is a french association whose purpose is to create a community, to build a method, to expand Microgrids.
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <div>
-            <%= link_to  (image_tag "http://placehold.it/200x100"), page_path('about')%>
-            <h3> Team </h3>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4">
-          <div>
-            <%= link_to  (image_tag "http://placehold.it/200x100"), page_path('about')%>
-
-            <h3> Mission </h3>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4">
-          <div >
-            <%= link_to  (image_tag "http://placehold.it/200x100"), page_path('about')%>
-            <h3> Plateform </h3>
-          </div>
-        </div>
-      </div>
-    </div>
     <div>
-      <div id="map" style="width: 100%; height: 600px;"></div>
+      <div id="map" class="big-white" style="width: 100%; height: 600px;"> TOURNESOL</div>
 
       <% content_for(:after_js) do %>
         <%= javascript_tag do %>

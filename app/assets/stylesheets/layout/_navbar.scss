@@ -40,6 +40,7 @@ $navbar-profile-border-width: 2px;
 /* -------------------------------------
  * SCSS code
  * ------------------------------------- */
+
  .accounts-show {
   nav {
     position: relative !important;
@@ -70,6 +71,37 @@ $navbar-profile-border-width: 2px;
     }
   }
 }
+
+
+.home-index {
+  .navbar {
+   background: transparent;
+   border: 0;
+   position: absolute;
+   left: 0;
+   right: 0;
+
+   .navbar-nav {
+    background: none !important;
+   }
+
+  .dropdown-menu {
+    a {
+      color: black !important;
+    }
+  }
+
+   a {
+     color: white !important;
+     background: none !important;
+
+     &:hover {
+       border-color: white;
+     }
+   }
+  }
+}
+
 
 
 .navbar-wagon {
