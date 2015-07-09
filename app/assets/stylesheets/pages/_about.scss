@@ -1,0 +1,66 @@
+.title{
+  margin: -11px 0 11px;
+  background: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: .3em;
+}
+
+.title-big{
+  margin: -11px 0 11px;
+  background: white;
+  text-transform: uppercase;
+  font-size: 50px;
+  letter-spacing: .3em;
+  padding-top : 50px;
+}
+
+
+
+.block-divider {
+  width: 100%;
+  border-top: 1px solid #CBC5C5;
+  position: relative;
+}
+
+
+.partners-image{
+  width: 100px;
+  object-fit: cover;
+}
+
+.partners-image-diderot{
+  height: 100px;
+  object-fit: cover;
+}
+
+.card {
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 615px;
+  border-radius: 2px;
+  border-left: 1px solid #D6D0D0;
+  border-right: 1px solid #D6D0D0;
+}
+
+.padding-top{
+  padding-top: 40px;
+}
+
+.background-image-about{
+  background-image: url('about.jpg');
+  color: black;
+  height: 400;
+
+}
+
+.padding-top2{
+
+  padding-top: 10px;
+}
+
+.height{
+  ;
+}
