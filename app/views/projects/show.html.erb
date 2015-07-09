@@ -110,7 +110,7 @@
 
   <div id="comments">
     <% if @project.projects_comments.blank? %>
-      <p id="comments-empty"> Pas de commentaires pour ce projet</p>
+      <p id="comments-empty" class="text-left"> Pas de commentaires pour ce projet</p>
     <% else %>
       <div class="list_of_comments">
         <% @project.projects_comments.each do |comment| %>
