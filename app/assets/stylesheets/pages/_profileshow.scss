@@ -1,48 +1,194 @@
+.profile_page {
 
-#relative{
-  background-image: image-url('background_profile.jpg');
-  background-size: cover;
-  height: 150px;
-  position: relative;
+  #relative{
+    background-image: image-url('background_profile.jpg');
+    background-size: cover;
+    height: 150px;
+    position: relative;
 
-}
+  }
 
-#absolute{
-  height:50px;
-  position:absolute;
-  width:50px;
-  left:46%;
-  bottom: 2px;
-}
+  #absolute{
+    height:50px;
+    position:absolute;
+    width:50px;
+    left:46%;
+    bottom: 2px;
+  }
 
-#description {
-  margin-top: 30px;
-  font-size: 18px;
-}
+  #description {
+    margin-top: 30px;
+    font-size: 18px;
+  }
 
-.img-uniform-size{
-    height: 100px;
-    resize: horizontal;
-    overflow: auto;
-}
+  .img-uniform-size{
+      height: 100px;
+      resize: horizontal;
+      overflow: auto;
+  }
 
-.text-underline {
-  color: #333333;
-  font-size: 18px;
-  &:hover {
-    color: grey;
+  .text-underline {
+    color: #333333;
+    font-size: 18px;
+    &:hover {
+      color: grey;
+    }
+  }
+
+  .center-block{
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .margin-top-50px {
+    margin-top: 50px;
+  }
+
+
+  .block-divider {
+    width: 100%;
+    border-top: 1px solid #CBC5C5;
+    margin-top: 110px;
+    position: relative;
+  }
+
+
+
+  .title{
+    position:absolute;
+    left:46%;
+    margin: -11px 0 11px;
+    background: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 3px 8px 2px 12px;
+    letter-spacing: .3em;
+  }
+
+  .card-shadowed{
+  box-shadow: 1px 1px 1px #F3E4E4;
+  margin-top: 50px;
+  }
+
+
+  p {
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 11px;
+    }
+    h4 {
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 13px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-top: 0px;
+    }
+  #profile_articles {
+    float: left;
+    width: 100%;
+    padding-top: 50px;
+    // h4 {
+    //   text-align : center;
+    //   margin-bottom: 45px;
+    //   text-transform: uppercase;
+    //   letter-spacing: .1em;
+    //   font-size: 15px;
+    // }
+    .profile_article {
+      position: relative;
+      padding-left: 30px;
+      padding-right: 30px;
+      p {
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-size: 11px;
+      }
+      .hover_card_profile_article {
+        position: absolute;
+        background-color: rgba(255,255,255,0);
+        top: 0;
+        display: table;
+        h4 {
+          color: rgba(255,255,255,0);
+        }
+        &:hover {
+          background-color: rgba(0,0,0,0.7);
+          h4 {
+            text-align : center;
+            margin-bottom: 45px;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            font-size: 15px;
+            color: white;
+          }
+        }
+        div {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+        }
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  #profile_projects {
+    float: left;
+    width: 100%;
+    padding-top: 50px;
+    // h4 {
+    //   text-align : center;
+    //   margin-bottom: 45px;
+    //   text-transform: uppercase;
+    //   letter-spacing: .1em;
+    //   font-size: 15px;
+    // }
+    .profile_project {
+      position: relative;
+      padding-left: 30px;
+      padding-right: 30px;
+      p {
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-size: 11px;
+      }
+
+
+      .hover_card_profile_project {
+        position: absolute;
+        background-color: rgba(255,255,255,0);
+        top: 0;
+        display: table;
+        h4 {
+          color: rgba(255,255,255,0);
+        }
+        &:hover {
+          background-color: rgba(0,0,0,0.7);
+          h4 {
+            text-align : center;
+            margin-bottom: 45px;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            font-size: 15px;
+            color: white;
+          }
+        }
+        div {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+        }
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }
-
-.center-block{
-  width: 200px;
-  margin: 0 auto;
-}
-
-.margin-top-50px {
-  margin-top: 50px;
-}
-
-
-
-

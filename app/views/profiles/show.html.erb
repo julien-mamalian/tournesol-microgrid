@@ -1,56 +1,87 @@
-<%= content_for(:title) do %>
-  <%= "Profile" %>
-<% end %>
+<div class="profile_page">
 
-<div id="relative">
-  &nbsp;
-  <div id="absolute">
-  <%= link_to (image_tag @user.picture.url(:thumb), class: "img-circle"), edit_account_path%>
-  </div>
-</div>
+  <%= content_for(:title) do %>
+    <%= "Profile" %>
+  <% end %>
 
-<div id="description">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 ">
-          <div class="text-center">
-            <h1><%= @user.first_name %> <%=@user.last_name%> </h1>
-          </div>
-
-          <div class="text-center">
-           <%=@user.function%> at <%=@user.entreprise%> in <%=@user.city%>
-          </div>
-          <div class="text-center">
-
-            <%=@user.followers_count %> follower(s)
-            <%= link_to "Follow", follow_profile_path(@user)%>
-            <%= link_to "Unfollow", unfollow_profile_path(@user)%>
-          </div>
-      </div>
+  <div id="relative">
+    &nbsp;
+    <div class='text-center'>
+    <%= link_to (image_tag @user.picture.url(:thumb), class: "img-circle"), edit_account_path%>
     </div>
   </div>
-</div>
 
-
-<div class="block-divider">
-  <div>
-    <div class="container text-center" id="right-container">
+  <div id="description">
+    <div class="container">
       <div class="row">
-        <div class="title text-in-box" id="articles">
-          <p>  Favorite Articles </p>
-        </div>
-
-          <% @user.articles.each do |article| %>
-            <div class="col-xs-3 card-shadowed">
-              <ul class= "list-unstyled">
-                <li><strong><%= link_to article.title, article_path(article)  %></strong></li>
-                <li><%= image_tag article.picture.url(:thumb), id:"thumb_profile", class:"img-circle img-uniform-size"  %></li>
-              </ul>
+        <div class="col-xs-12 ">
+            <div class="text-center">
+              <h2><%= @user.first_name %> <%=@user.last_name%> </h2>
             </div>
-          <% end %>
+
+            <div class="text-center">
+             <h4><%=@user.function%> at <%=@user.entreprise%> in <%=@user.city%></h4>
+            </div>
+            <div class="text-center">
+
+              <%=@user.followers_count %> follower(s)
+              <br>
+              <%= link_to "Follow", follow_profile_path(@user)%>
+              <%= link_to "Unfollow", unfollow_profile_path(@user)%>
+            </div>
+        </div>
       </div>
     </div>
   </div>
+
+
+  <div id='profile_articles'>
+    <div class="text-center">
+      <h4> My articles</h4>
+    </div>
+
+    <% @user.articles.sample(3).each do |article| %>
+      <div class="profile_article col-xs-4">
+        <div class="profile_article_picture text-left">
+
+          <%= link_to article_path(article) do %>
+            <%= image_tag article.picture.url(:medium) %>
+          <% end %>
+          <hr>
+          <p><%= article.title%></p>
+        </div>
+      </div>
+    <% end %>
+    <div class="text-right">
+        <p><%= link_to 'Voir plus' %></p>
+      </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <% if @user.projects.count != 0 %>
+    <div id='profile_projects'>
+      <div class="text-center">
+        <h4> My projects</h4>
+      </div>
+
+      <% @user.projects.sample(1).each do |project| %>
+        <div class="profile_project col-xs-4">
+          <div class="profile_project_picture text-left">
+            <%= link_to project_path(project) do %>
+              <%= image_tag project.picture.url(:medium) %>
+            <% end %>
+            <hr>
+            <p><%= project.title%></p>
+          </div>
+        </div>
+      <% end %>
+      <div class="text-right">
+        <p><%= link_to 'Voir plus' %></p>
+      </div>
+    </div>
+
+  <% end %>
 </div>
-
-
