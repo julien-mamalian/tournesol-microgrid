@@ -2,7 +2,7 @@
   margin: -11px 0 11px;
   background: white;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: .3em;
 }
 
@@ -41,26 +41,32 @@
   top: 0; left: 0; bottom: 0; right: 0;
   width: 615px;
   border-radius: 2px;
-  border-left: 1px solid #D6D0D0;
-  border-right: 1px solid #D6D0D0;
+  // border-left: 1px solid #D6D0D0;
+  // border-right: 1px solid #D6D0D0;
 }
 
 .padding-top{
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 .background-image-about{
   background-image: url('about.jpg');
   color: black;
-  height: 400;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin: 0px;
 
 }
 
 .padding-top2{
 
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .height{
   ;
+}
+
+.padding-bottom{
+  padding-bottom: 10px;
 }
