@@ -27,6 +27,8 @@
       </div>
       <div class="text-center tk-freight-text-pro">
         <%= @project.user.first_name %> <%= @project.user.last_name %>
+        <br>
+        <%= link_to "Check profile", profile_path(@project.user) %>
         <hr>
       </div>
       <div class="enterprise_writter text-left">
@@ -81,15 +83,7 @@
           <% end %>
         </div>
           <hr>
-        <div class="linked-articles">
-          <strong> Read more about this Microgrid :</strong> <div class="tk-freight-text-pro">
-          <ul>
-            <% @project.articles.each do |article| %>
-              <li><%= link_to "#{article.title}", article_path(article) %></li>
-            <% end %>
-          </ul>
-        </div>
-        </div>
+
       </div>
     </div>
   </div>
