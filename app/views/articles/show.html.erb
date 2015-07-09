@@ -88,7 +88,7 @@
 
   <div id="comments">
     <% if @article.comments_articles.blank? %>
-      <p id="comments-empty"> Pas de commentaires pour cet article </p>
+      <!-- <p id="comments-empty"> Pas de commentaires pour cet article </p> -->
     <% else %>
       <div class="list_of_comments">
         <% @article.comments_articles.each do |comment| %>
