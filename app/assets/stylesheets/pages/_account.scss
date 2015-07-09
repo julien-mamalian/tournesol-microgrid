@@ -1,5 +1,47 @@
 #general_account {
 
+  #myModal, #myModall {
+    background-color: rgba(255,255,255, 1);
+    h4 {
+        margin-top: 25px;
+        margin-bottom: 60px;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        font-size: 30px;
+
+      }
+    .close_button {
+      position: absolute;
+      top : 15px;
+      right : 55px;
+      cursor: pointer;
+      font-size: 20px;
+      &:hover {
+        color: grey;
+      }
+
+    }
+    .contain_modal {
+      padding-left: 400px;
+      padding-right: 400px;
+
+    }
+    .align_ver {
+      height : 100px;
+      display: table;
+    }
+    p {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 15px;
+    }
+    .img_follow {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  }
+
   li {
     list-style-type:none;
   }
@@ -167,10 +209,107 @@
       }
     }
     #my_articles {
+      display: none;
+      padding-top: 50px;
+      h4 {
+        text-align : center;
+        margin-bottom: 45px;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-size: 15px;
+      }
+      .my_favorite_article {
+        position: relative;
+        padding-left: 30px;
+        padding-right: 30px;
+        p {
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            font-size: 11px;
+          }
+        .hover_card_my_article {
+          position: absolute;
+          background-color: rgba(255,255,255,0);
+          top: 0;
+          display: table;
+          h4 {
+            color: rgba(255,255,255,0);
+          }
+          &:hover {
+            background-color: rgba(0,0,0,0.7);
+            h4 {
+              text-align : center;
+              margin-bottom: 45px;
+              text-transform: uppercase;
+              letter-spacing: .1em;
+              font-size: 15px;
+              color: white;
+            }
+          }
+          div {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+          }
+
+
+        }
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
 
     }
     #my_projects {
-
+        display: none;
+        padding-top: 50px;
+        h4 {
+          text-align : center;
+          margin-bottom: 45px;
+          text-transform: uppercase;
+          letter-spacing: .1em;
+          font-size: 15px;
+        }
+        .my_favorite_project {
+          position: relative;
+          padding-left: 30px;
+          padding-right: 30px;
+          p {
+              text-transform: uppercase;
+              letter-spacing: .1em;
+              font-size: 11px;
+            }
+          .hover_card_my_project {
+            position: absolute;
+            background-color: rgba(255,255,255,0);
+            top: 0;
+            display: table;
+            h4 {
+              color: rgba(255,255,255,0);
+            }
+            &:hover {
+              background-color: rgba(0,0,0,0.7);
+              h4 {
+                text-align : center;
+                margin-bottom: 45px;
+                text-transform: uppercase;
+                letter-spacing: .1em;
+                font-size: 15px;
+                color: white;
+              }
+            }
+            div {
+              display: table-cell;
+              vertical-align: middle;
+              text-align: center;
+            }
+          }
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
     }
   }
 }

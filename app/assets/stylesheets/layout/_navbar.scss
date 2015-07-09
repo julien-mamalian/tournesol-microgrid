@@ -40,6 +40,13 @@ $navbar-profile-border-width: 2px;
 /* -------------------------------------
  * SCSS code
  * ------------------------------------- */
+ .accounts-show {
+  nav {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+ }
+
 .nav {
 
   a {
