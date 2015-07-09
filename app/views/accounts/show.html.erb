@@ -2,110 +2,105 @@
   <%= @user.first_name %>
 <% end %>
 
-<div id="relative">
-  &nbsp;
-  <div id="absolute">
-  <%= link_to (image_tag @user.picture.url(:thumb), class: "img-circle"), edit_account_path%>
-  </div>
-</div>
-
-<div id="description">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 ">
-          <div class="text-center">
-            <h1><%= @user.first_name %> <%=@user.last_name%> </h1>
-          </div>
-
-          <div class="text-center">
-           <%=@user.function%> at <%=@user.entreprise%> in <%=@user.city%>
-          </div>
-
-          <div class="text-center">
-          Request to post content : <%= @user.requested_rights %>
-          </div>
-
-          <div class="text-center cmd-small">
-            <br>
-            <%= link_to "Edit profile", edit_account_path %>
-          </div>
+<div id="general_account">
+  <div class="account_menu">
+    <div class="text-center picture_account">
+      <%= image_tag current_user.picture.url(:thumb), class:'img-circle' %>
+      <br>
+      <p><%= current_user.first_name %>  <%= current_user.last_name %></p>
+      <div class="col-xs-6">
+        <%= link_to "Followings"%>
       </div>
+      <div class="col-xs-6">
+        <%= link_to "Followers"%>
+      </div>
+      <% if @user.expertise == nil && @user.requested_rights == "Not sent" %>
+        <%= link_to "Request right to publish articles", right_request_account_path, method: :post %>
+      <% end %>
+      <br>
+      <hr>
     </div>
-  </div>
+    <div class="text-left account_menu_infos">
+      <div class="text-center">
+        <p>Profile's information</p>
+      </div>
+      <ul>
+        <li><strong>Company: </strong><%= current_user.entreprise%></li>
+        <li><strong>Position: </strong><%= current_user.function%></li>
+        <li><strong>City: </strong><%= current_user.city %></li>
+        <li><%= link_to "Edit profile", edit_account_path %></li>
+      </ul>
+      <hr>
+    </div>
+    <div class="account_menu_links text-center">
+      <ul>
+        <li id="favorite_articles_link">Favorite articles</li>
+        <li id="favorite_projects_link">Favorite microgrids</li>
+        <% if current_user.expertise %>
+          <li id="my_articles_link">My articles</li>
+          <li id="my_projects_link">My microgrids</li>
+        <% end %>
+      </ul>
+    </div>
 
-  <ul class="list-unstyle list-inline text-center margin-top-50px padding-bottom-50px">
-    <% if @user.expertise == true %>
-      <li> <%= link_to "Your articles", :anchor => "articles" %> </li>
-      <li></li>
-      <li><%= link_to "Your projects", :anchor => "projects"%></li>
-    <% else %>
-      <li> <%= link_to "Favorite authors", :anchor => "authors" %> </li>
-      <li></li>
-      <li><%= link_to "Favorite projects", :anchor => "projects"%></li>
+  </div>
+  <div class="account_contain">
+
+    <div id='favorite_articles'>
+      <h4> My favorite articles</h4>
+      <% current_user.votes.each do |vote| %>
+        <% if vote.votable_type == "Article" %>
+          <% article = Article.find(vote.votable_id) %>
+          <div class="favorite_article col-xs-4">
+            <div class="favorite_article_picture text-center">
+              <%= image_tag article.picture.url(:medium) %>
+              <%= link_to article_path(article) do %>
+                <div class="hover_card_article col-xs-4">
+                  <div>
+                    <h4>Read article</h4>
+                  </div>
+                </div>
+              <% end %>
+              <hr>
+              <p><%= article.title%></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
+
+    <div id='favorite_projects'>
+     <h4> My favorite projects</h4>
+     <% current_user.votes.each do |vote| %>
+       <% if vote.votable_type == "Project" %>
+         <% project = Project.find(vote.votable_id) %>
+         <div class="favorite_project col-xs-4">
+           <div class="favorite_project_picture text-center">
+             <%= image_tag project.picture.url(:medium) %>
+             <%= link_to project_path(project) do %>
+               <div class="hover_card_project col-xs-4">
+                 <div>
+                   <h4>See project</h4>
+                 </div>
+               </div>
+              <% end %>
+             <hr>
+             <p><%= project.title%></p>
+           </div>
+         </div>
+       <% end %>
+     <% end %>
+    </div>
+
+
+
+    <% if current_user.expertise %>
+      <div id='my_articles'></div>
+      <div id='my_projects'></div>
     <% end %>
-  </ul>
-  <% if @user.expertise == nil && @user.requested_rights == "Not sent" %>
-    <div class = "text-center">
-      <%= link_to "Request right to publish articles", right_request_account_path, method: :post %>
-    </div>
-  <% end %>
-</div>
-
-
-<div class="block-divider">
-  <div>
-    <div class="container text-center" id="right-container">
-      <div class="row">
-        <div class="title text-in-box" id="articles">
-          <% if user_signed_in? && @user.id == current_user.id && @user.expertise == true %>
-            <p>Your articles</p>
-          <% end %>
-        </div>
-
-          <% @user.articles.each do |article| %>
-            <div class="col-xs-3 card-shadowed">
-              <ul class= "list-unstyled">
-                <li><strong><%= link_to article.title, article_path(article)  %></strong></li>
-                <li><%= image_tag article.picture.url(:thumb), id:"thumb_profile", class:"img-circle img-uniform-size"  %></li>
-                <% if user_signed_in? && @user.id == current_user.id && @user.expertise == true %>
-                <li><%= link_to "Update", edit_article_path(article) %> <%= link_to "Destroy", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></li>
-                <% else %>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-      </div>
-      <div class="row">
-        <div class="title text-in-box" id="articles">
-          <% if user_signed_in? && @user.id == current_user.id && @user.expertise == true %>
-            <p>Favorite Authors</p>
-            <% unless @user.all_following.blank?%>
-              <div class="row">
-
-                <%=link_to @user.all_following[0].first_name+" "+@user.all_following[0].last_name   , profile_path(@user.all_following[0].id) %>
-
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-
-          <% @user.articles.each do |article| %>
-            <div class="col-xs-3 card-shadowed">
-              <ul class= "list-unstyled">
-                <li><strong><%= link_to article.title, article_path(article)  %></strong></li>
-                <li><%= image_tag article.picture.url(:thumb), id:"thumb_profile", class:"img-circle img-uniform-size"  %></li>
-                <% if user_signed_in? && @user.id == current_user.id && @user.expertise == true %>
-                <li><%= link_to "Update", edit_article_path(article) %> <%= link_to "Destroy", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></li>
-                <% else %>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-      </div>
-    </div>
   </div>
 </div>
-
-
 
 
