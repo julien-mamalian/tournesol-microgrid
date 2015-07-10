@@ -1,21 +1,28 @@
  <div id="index_article">
   <div class="text-center">
-    <h2 class='tk-europa' >List of articles</h2>
-    <div class="text-center container form-inline control-form tk-freight-text-pro">
+    <p id='index-articles-title'> Latest articles</p>
+    <div class="col-xs-8 col-xs-offset-2">
+      <hr>
+    </div>
+
+
+    <div class="text-center container form-inline control-form search-bar">
+
+
       <%= search_form_for @q do |f| %>
 
-        <%= f.label :title_cont, "Title contains:", class:'tk-freight-text-pro' %>
+        <p><%= f.label :title_cont, "Title contains:" %>
         <%= f.search_field :title_cont, class:'form-control' %>
 
-        <%= f.label :content_cont, "Content contain:", class:'tk-freight-text-pro' %>
+        <%= f.label :content_cont, "Content contains:" %>
         <%= f.search_field :content_cont, class:'form-control'%>
 
-        <%= f.submit %>
-        <br>
+        <i class="fa fa-search"></i><%= f.submit :id => 'button_profile'%>
+      </p>
+        <br><br>
       <% end %>
 
-      <%= sort_link @search, :votes, "Sort by number of votes" %>
-      <%= sort_link @search, :created_at, "Sort by date of creation" %>
+
     </div>
 
   </div>
