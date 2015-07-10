@@ -129,7 +129,7 @@
 
 
     <div id='favorite_projects'>
-     <h4> My favorite projects</h4>
+     <h4> My favorite Microgrids</h4>
      <% current_user.votes.each do |vote| %>
        <% if vote.votable_type == "Project" %>
          <% project = Project.find(vote.votable_id) %>

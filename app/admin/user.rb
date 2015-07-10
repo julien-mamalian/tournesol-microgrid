@@ -14,5 +14,5 @@ ActiveAdmin.register User do
     f.actions
   end
 
-  permit_params :first_name, :email, :admin, :last_name, :requested_rights, :expertise, :city
+  permit_params :first_name, :email, :admin, :last_name, :requested_rights, :expertise, :city, :latitude, :longitude
 end

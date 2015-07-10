@@ -37,7 +37,7 @@
 
   <div id='profile_articles'>
     <div class="text-center">
-      <h4> My articles</h4>
+      <h4> Articles</h4>
     </div>
 
     <% @user.articles.sample(3).each do |article| %>
@@ -64,7 +64,7 @@
   <% if @user.projects.count != 0 %>
     <div id='profile_projects'>
       <div class="text-center">
-        <h4> My projects</h4>
+        <h4> Microgrids</h4>
       </div>
 
       <% @user.projects.sample(1).each do |project| %>
