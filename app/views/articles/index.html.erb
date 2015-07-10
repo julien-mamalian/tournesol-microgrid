@@ -1,13 +1,13 @@
  <div id="index_article">
   <div class="text-center">
     <h2 class='tk-europa' >List of articles</h2>
-    <div class="text-center container form-inline control-form">
+    <div class="text-center container form-inline control-form tk-freight-text-pro">
       <%= search_form_for @q do |f| %>
 
-        <%= f.label :title_cont, "Title contains:" %>
+        <%= f.label :title_cont, "Title contains:", class:'tk-freight-text-pro' %>
         <%= f.search_field :title_cont, class:'form-control' %>
 
-        <%= f.label :content_cont, "Content contain:" %>
+        <%= f.label :content_cont, "Content contain:", class:'tk-freight-text-pro' %>
         <%= f.search_field :content_cont, class:'form-control'%>
 
         <%= f.submit %>
