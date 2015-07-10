@@ -50,10 +50,14 @@
               </li>
               <% if current_user.expertise == true %>
                 <li>
-                  <%= link_to 'New article', new_article_path %>
+                <%= link_to new_article_path do %>
+                  <i class="fa fa-pencil-square-o"></i> <p id="new">New article</p>
+                <% end %>
                 </li>
                 <li>
-                  <%= link_to 'New microgrid', new_project_path %>
+                <%= link_to new_project_path do %>
+                  <i class="fa fa-pencil-square-o"></i> <p id="new">New microgrid</p>
+                <% end %>
                 </li>
               <% end %>
 

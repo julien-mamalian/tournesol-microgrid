@@ -41,6 +41,9 @@ $navbar-profile-border-width: 2px;
  * SCSS code
  * ------------------------------------- */
 
+ #new {
+  display: inline;
+ }
  .accounts-show {
   nav {
     position: relative !important;
