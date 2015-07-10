@@ -16,6 +16,10 @@
     font-size: 13px;
     letter-spacing: .1em;
     text-transform: uppercase;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    background-color: white;
 
     &:hover {
       color: grey;
