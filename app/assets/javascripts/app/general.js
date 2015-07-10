@@ -1,5 +1,5 @@
-$(document).ready(function(){
-  $('#banner').css({
-    'height': $(window).height()
-  })
-});
+// $(document).ready(function(){
+//   $('#banner').css({
+//     'height': $(window).height()
+//   })
+// });

@@ -1,44 +1,6 @@
-<div class="modal fade" id="myModall">
-  <h4>My Followers </h4>
-  <% current_user.followers.each do |following| %>
-    <div class="text-center contain_modal">
-      <div class="col-xs-3">
-        <%= image_tag following.picture.url(:thumb), class:'img-circle img_follow' %>
-      </div>
-      <div class="col-xs-4 align_ver">
-        <p><%= following.first_name %> <%= following.last_name %> | <%= following.function %> at <%= following.entreprise %></p>
-      </div>
-      <div class="col-xs-5 align_ver">
-        <p><%= link_to 'Check Profile', profile_path(following) %></p>
-      </div>
-      <div class="col-xs-12">
-        <hr>
-      </div>
-    </div>
-  <% end %>
-    <p type="button" class="close_button" data-dismiss="modal">Close X</p>
-</div><!-- /.modal-dialog -->
 
-<div class="modal fade" id="myModal">
-  <h4>My Followings </h4>
-  <% current_user.all_following.each do |following| %>
-    <div class="text-center contain_modal">
-      <div class="col-xs-3">
-        <%= image_tag following.picture.url(:thumb), class:'img-circle img_follow' %>
-      </div>
-      <div class="col-xs-4 align_ver">
-        <p><%= following.first_name %> <%= following.last_name %> | <%= following.function %> at <%= following.entreprise %></p>
-      </div>
-      <div class="col-xs-5 align_ver">
-        <p><%= link_to 'Check Profile |', profile_path(following) %><%= link_to ' Unfollow', unfollow_profile_path(following) %></p>
-      </div>
-      <div class="col-xs-12">
-        <hr>
-      </div>
-    </div>
-  <% end %>
-    <p type="button" class="close_button" data-dismiss="modal">Close X</p>
-</div><!-- /.modal-dialog -->
+
+
 
 <%= content_for(:title) do %>
   <%= @user.first_name %>
@@ -58,7 +20,47 @@
       <div class="col-xs-6">
         <a class=""  data-toggle="modal" data-target="#myModal" id="myInput">Followings: <%= current_user.all_following.count %></a>
       </div>
+      <div class="modal fade" id="myModal">
+        <h4>My Followings </h4>
+        <% current_user.all_following.each do |following| %>
+          <div class="text-center contain_modal">
+            <div class="col-xs-3">
+              <%= image_tag following.picture.url(:thumb), class:'img-circle img_follow' %>
+            </div>
+            <div class="col-xs-4 align_ver">
+              <p><%= following.first_name %> <%= following.last_name %> | <%= following.function %> at <%= following.entreprise %></p>
+            </div>
+            <div class="col-xs-5 align_ver">
+              <p><%= link_to 'Check Profile |', profile_path(following) %><%= link_to ' Unfollow', unfollow_profile_path(following) %></p>
+            </div>
+            <div class="col-xs-12">
+              <hr>
+            </div>
+          </div>
+        <% end %>
+          <p type="button" class="close_button" data-dismiss="modal">Close X</p>
+      </div><!-- /.modal-dialog -->
       <a class=""  data-toggle="modal" data-target="#myModall" id="myInput">Followers: <%= current_user.followers.count %></a>
+      <div class="modal fade" id="myModall">
+        <h4>My Followers </h4>
+        <% current_user.followers.each do |following| %>
+          <div class="text-center contain_modal">
+            <div class="col-xs-3">
+              <%= image_tag following.picture.url(:thumb), class:'img-circle img_follow' %>
+            </div>
+            <div class="col-xs-4 align_ver">
+              <p><%= following.first_name %> <%= following.last_name %> | <%= following.function %> at <%= following.entreprise %></p>
+            </div>
+            <div class="col-xs-5 align_ver">
+              <p><%= link_to 'Check Profile', profile_path(following) %></p>
+            </div>
+            <div class="col-xs-12">
+              <hr>
+            </div>
+          </div>
+        <% end %>
+          <p type="button" class="close_button" data-dismiss="modal">Close X</p>
+      </div><!-- /.modal-dialog -->
 
       <% if @user.expertise == nil && @user.requested_rights == "Not sent" %>
       <br><br>
@@ -104,8 +106,9 @@
           <% article = Article.find(vote.votable_id) %>
           <div class="favorite_article col-xs-12 col-md-6 col-lg-4">
             <div class="favorite_article_picture text-center">
-              <%= image_tag article.picture.url(:medium) %>
+
               <%= link_to article_path(article) do %>
+              <%= image_tag article.picture.url(:medium) %>
                 <div class="hover_card_article col-xs-12 col-md-6 col-lg-4">
                   <div>
                     <h4>Read article</h4>
@@ -129,8 +132,8 @@
          <% project = Project.find(vote.votable_id) %>
          <div class="favorite_project col-xs-12 col-md-6 col-lg-4">
            <div class="favorite_project_picture text-center">
-             <%= image_tag project.picture.url(:medium) %>
              <%= link_to project_path(project) do %>
+             <%= image_tag project.picture.url(:medium) %>
                <div class="hover_card_project col-xs-12 col-md-6 col-lg-4">
                  <div>
                    <h4>See project</h4>
@@ -153,8 +156,8 @@
         <% current_user.articles.each do |article| %>
           <div class="my_favorite_article col-xs-12 col-md-6 col-lg-4">
             <div class="my_favorite_article_picture text-center">
-              <%= image_tag article.picture.url(:medium) %>
               <%= link_to article_path(article) do %>
+              <%= image_tag article.picture.url(:medium) %>
                 <div class="hover_card_my_article col-xs-12 col-md-6 col-lg-4">
                   <div>
                     <h4>Read my article</h4>
@@ -175,8 +178,8 @@
         <% current_user.projects.each do |project| %>
           <div class="my_favorite_project col-xs-12 col-md-6 col-lg-4">
             <div class="my_favorite_project_picture text-center">
-              <%= image_tag project.picture.url(:medium) %>
               <%= link_to project_path(project) do %>
+              <%= image_tag project.picture.url(:medium) %>
                 <div class="hover_card_my_project col-xs-12 col-md-6 col-lg-4">
                   <div>
                     <h4>See my project</h4>
