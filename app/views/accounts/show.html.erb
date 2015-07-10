@@ -102,11 +102,11 @@
       <% current_user.votes.each do |vote| %>
         <% if vote.votable_type == "Article" %>
           <% article = Article.find(vote.votable_id) %>
-          <div class="favorite_article col-xs-4 col-md-6">
+          <div class="favorite_article col-xs-12 col-md-6 col-lg-4">
             <div class="favorite_article_picture text-center">
               <%= image_tag article.picture.url(:medium) %>
               <%= link_to article_path(article) do %>
-                <div class="hover_card_article col-xs-4 col-md-6">
+                <div class="hover_card_article col-xs-12 col-md-6 col-lg-4">
                   <div>
                     <h4>Read article</h4>
                   </div>
@@ -127,11 +127,11 @@
      <% current_user.votes.each do |vote| %>
        <% if vote.votable_type == "Project" %>
          <% project = Project.find(vote.votable_id) %>
-         <div class="favorite_project col-xs-4 col-md-6">
+         <div class="favorite_project col-xs-12 col-md-6 col-lg-4">
            <div class="favorite_project_picture text-center">
              <%= image_tag project.picture.url(:medium) %>
              <%= link_to project_path(project) do %>
-               <div class="hover_card_project col-xs-4 col-md-6">
+               <div class="hover_card_project col-xs-12 col-md-6 col-lg-4">
                  <div>
                    <h4>See project</h4>
                  </div>
@@ -151,11 +151,11 @@
       <div id='my_articles'>
         <h4> My articles</h4>
         <% current_user.articles.each do |article| %>
-          <div class="my_favorite_article col-xs-4 col-md-6">
+          <div class="my_favorite_article col-xs-12 col-md-6 col-lg-4">
             <div class="my_favorite_article_picture text-center">
               <%= image_tag article.picture.url(:medium) %>
               <%= link_to article_path(article) do %>
-                <div class="hover_card_my_article col-xs-4 col-md-6">
+                <div class="hover_card_my_article col-xs-12 col-md-6 col-lg-4">
                   <div>
                     <h4>Read my article</h4>
                   </div>
@@ -173,11 +173,11 @@
       <div id='my_projects'>
         <h4> My projects</h4>
         <% current_user.projects.each do |project| %>
-          <div class="my_favorite_project col-xs-4 col-md-6">
+          <div class="my_favorite_project col-xs-12 col-md-6 col-lg-4">
             <div class="my_favorite_project_picture text-center">
               <%= image_tag project.picture.url(:medium) %>
               <%= link_to project_path(project) do %>
-                <div class="hover_card_my_project col-xs-4 col-md-6">
+                <div class="hover_card_my_project col-xs-12 col-md-6 col-lg-4">
                   <div>
                     <h4>See my project</h4>
                   </div>

@@ -1,25 +1,22 @@
  <div id="index_article">
   <div class="text-center">
-    <h2 class='tk-europa' >List of microgrids</h2>
-    <br>
+    <p id='index-articles-title'> latest projects</p>
+    <hr>
+
   </div>
   <div class="text-center container form-inline control-form">
     <%= search_form_for @q, html: { autocomplete: 'off'}, class:'search_form'  do |f| %>
 
 
-      <%= f.label :title_cont, "Search by title:" %>
+    <p><%= f.label :title_cont, "Search by title:" %>
       <%= f.search_field :title_cont, class:'form-control' %>
 
       <%= f.label :description_cont, "Search by content:" %>
       <%= f.search_field :description_cont, class:'form-control' %>
 
-      <%= f.submit%>
+      <i class="fa fa-search"></i><%= f.submit :id => 'button_profile'%></p>
       <br>
     <% end %>
-    <br>
-    <%= sort_link @search, :votes, "Sort by number of votes" %>
-    <br>
-    <%= sort_link @search, :created_at, "Sort by date of creation" %>
   </div>
   <div class="vertical-spacer"></div>
 
