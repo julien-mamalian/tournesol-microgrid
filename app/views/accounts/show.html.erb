@@ -164,7 +164,7 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <h4 class="text-center">My Followings </h4>
   <% current_user.all_following.each do |following| %>
-    <div class="text-center contain_modal">
+    <div class="text-center contain_modal" style="padding-left: 200px; padding-right: 200px;">
       <div class="col-xs-3">
         <%= image_tag following.picture.url(:thumb), class:'img-circle img_follow' %>
       </div>
@@ -185,7 +185,7 @@
 <div class="modal fade" id="myModall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <h4 class="text-center">My Followers </h4>
   <% current_user.followers.each do |following| %>
-    <div class="text-center contain_modal">
+    <div class="text-center contain_modal" style="padding-left: 200px; padding-right: 200px;">
       <div class="col-xs-3">
         <%= image_tag following.picture.url(:thumb), class:'img-circle img_follow' %>
       </div>
