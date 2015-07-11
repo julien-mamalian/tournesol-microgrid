@@ -1,9 +1,14 @@
-<%= simple_form_for([article, comment], remote: true) do |f| %>
+<% if user_signed_in? %>
 
-  <%= f.input :description, input_html: { class: "form_control comment-description" } %>
-  <%= f.hidden_field :date_creation, :value => Time.now%>
-  <%= f.hidden_field :user_id, :value => current_user.id%>
+  <%= simple_form_for([article, comment], remote: true) do |f| %>
 
-  <%= f.button :submit, class: "btn-primary", id:"input_validate" %>
+    <%= f.input :description, input_html: { class: "form_control comment-description" } %>
+    <%= f.hidden_field :date_creation, :value => Time.now%>
+    <%= f.hidden_field :user_id, :value => current_user.id%>
+
+    <%= f.button :submit, class: "btn-primary", id:"input_validate" %>
+
+  <% end %>
 
 <% end %>
+
