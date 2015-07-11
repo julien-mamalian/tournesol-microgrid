@@ -1,0 +1,43 @@
+#sign-in-front {
+  #button_profile {
+
+    margin-top: 25px;
+    border: 1px solid black;
+    padding: 10px 10px;
+    color: black;
+    font-size: 13px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    background-color: white;
+
+    &:hover {
+      color: grey;
+    }
+  }
+  label {
+    font-size: 14px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  a {
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  input {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+  }
+  h3 {
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

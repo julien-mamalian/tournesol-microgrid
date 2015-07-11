@@ -13,8 +13,9 @@ $(document).ready(function(){
   });
   var width_img = $('.favorite_article img').width();
   $('.hover_card_article').css({
-    'height': window_height * 0.25,
-    'width': width_img
+    // 'height': window_height * 0.25,
+    // 'width': width_img
+    'display': 'none'
   });
 
 
@@ -23,8 +24,9 @@ $(document).ready(function(){
     'height': window_height * 0.25
   });
   $('.hover_card_project').css({
-    'height': window_height * 0.25,
-    'width': width_img
+    // 'height': window_height * 0.25,
+    // 'width': width_img
+    'display': 'none'
   });
 
   // MY ARTICLES
@@ -32,8 +34,9 @@ $(document).ready(function(){
     'height': window_height * 0.25
   });
   $('.hover_card_my_article').css({
-    'height': window_height * 0.25,
-    'width': width_img
+    // 'height': window_height * 0.25,
+    // 'width': width_img
+    'display': 'none'
   });
 
   // MY PROJECTS
@@ -41,8 +44,9 @@ $(document).ready(function(){
     'height': window_height * 0.25
   });
   $('.hover_card_my_project').css({
-    'height': window_height * 0.25,
-    'width': width_img
+    // 'height': window_height * 0.25,
+    // 'width': width_img
+    'display': 'none'
   });
 
 

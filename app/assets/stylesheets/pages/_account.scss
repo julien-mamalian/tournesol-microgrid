@@ -1,46 +1,55 @@
-#general_account {
 
-  #myModal, #myModall {
-    background-color: rgba(255,255,255, 1);
-    h4 {
-        margin-top: 25px;
-        margin-bottom: 60px;
-        text-transform: uppercase;
-        letter-spacing: .15em;
-        font-size: 30px;
-
-      }
-    .close_button {
-      position: absolute;
-      top : 15px;
-      right : 55px;
-      cursor: pointer;
-      font-size: 20px;
-      &:hover {
-        color: grey;
-      }
-
-    }
-    .contain_modal {
-      padding-left: 400px;
-      padding-right: 400px;
-
-    }
-    .align_ver {
-      height : 100px;
-      display: table;
-    }
-    p {
-      display: table-cell;
-      vertical-align: middle;
-      font-size: 15px;
-    }
-    .img_follow {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-    }
+.modal-open .modal {
+  p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-size: 10px;
   }
+  background-color: rgba(255,255,255, 1) !important;
+  h4 {
+      margin-top: 25px;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: 22px;
+
+    }
+  .close_button {
+    position: absolute;
+    top : 15px;
+    right : 55px;
+    cursor: pointer;
+    font-size: 20px;
+    &:hover {
+      color: grey;
+    }
+
+  }
+  .contain_modal {
+    padding-left: 400px;
+    padding-right: 400px;
+
+  }
+  .align_ver {
+    height : 100px;
+    display: table;
+  }
+  p {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 15px;
+  }
+  .img_follow {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+}
+
+
+#general_account {
 
   li {
     list-style-type:none;
@@ -125,9 +134,17 @@
           }
         .hover_card_article {
           position: absolute;
-          background-color: rgba(255,255,255,0);
+
           top: 0;
           display: table;
+          width: 100%;
+          padding-right: 60px;
+          div {
+            background-color: rgba(255,255,255,0);
+            &:hover {
+              background-color: rgba(0,0,0,0.7);
+            }
+          }
           h4 {
             color: rgba(255,255,255,0);
           }
